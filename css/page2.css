@@ -1,0 +1,78 @@
+body {
+    background-color: #ecf8ff;
+}
+
+.macbook-pro .the-password-project {
+  position: absolute;
+  width: 216px;
+  top: 67px;
+  left: 88px;
+  -webkit-text-stroke: 1px #000000;
+  font-family: "Inter-Regular", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 40px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.macbook-pro .overlap {
+  position: absolute;
+  width: 752px;
+  height: 442px;
+  top: 272px;
+  left: 88px;
+}
+
+.macbook-pro .text-wrapper {
+  position: absolute;
+  width: 603px;
+  top: 0;
+  left: 0;
+  -webkit-text-stroke: 1px #000000;
+  font-family: "Inter-Regular", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 35px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.macbook-pro .rectangle {
+  position: absolute;
+  width: 751px;
+  height: 380px;
+  top: 62px;
+  left: 1px;
+  background-color: #d3efff;
+}
+
+.macbook-pro .overlap-2 {
+  position: absolute;
+  width: 603px;
+  height: 170px;
+  top: 272px;
+  left: 908px;
+}
+
+.macbook-pro .logo-button {
+  position: absolute;
+  width: 130px;
+  height: 97px;
+  top: 73px;
+  left: 7px;
+  background-color: #d9d9d9;
+}
+
+.macbook-pro .text-wrapper-24 {
+  position: absolute;
+  top: 109px;
+  left: 30px;
+  font-family: "Inter-Regular", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 20px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
