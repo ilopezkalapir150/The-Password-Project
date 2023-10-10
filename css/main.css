@@ -1,0 +1,71 @@
+@import url("fonts.css");
+
+* {
+    padding: 2px;
+    margin: 2px;
+    font-family: "Roboto", "Roboto Mono", sans-serif;
+}
+
+header {
+    position: absolute;
+    width: 98%;
+}
+
+main {
+    margin-top: 150px;
+}
+
+div.navigation-bar {
+    display: flex;
+    background-color: #b43135;
+    min-height: 32px;
+    margin-bottom: 8px;
+}
+
+p {
+    font-size: 14px;
+}
+
+input#password-input {
+    padding: 4px 8px;
+    font-size: 16px;
+    min-height: 24px;
+    min-width: 512px;
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+    transition: color 0.25s;
+}
+
+a.navigation-bar-item {
+    color: white;
+    vertical-align: middle;
+}
+
+@media only screen and (max-width: 1024px) {
+    nav.main_nav {
+        padding: 0 64px;
+    }
+    footer {
+        padding: 20px 64px 10px;
+    }
+    div.footer_middle {
+        flex-wrap: wrap;
+    }
+}
+
+@media only screen and (max-width: 680px) {
+    div.footer_links_container {
+        min-width: 100px;
+    }
+    div.footer_links_subcontainer {
+        flex-wrap: wrap;
+    }
+    ul.footer_links_list {
+        width: 100%;
+        display: block;
+        flex-shrink: 0;
+    }
+}
