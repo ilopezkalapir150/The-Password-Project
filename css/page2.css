@@ -55,6 +55,14 @@ body {
   left: 908px;
 }
 
+.macbook-pro .overlap-3 {
+  position: absolute;
+  width: 752px;
+  height: 442px;
+  top: 800px;
+  left: 88px;
+}
+
 .macbook-pro .logo-button {
   position: absolute;
   width: 130px;
@@ -62,17 +70,4 @@ body {
   top: 73px;
   left: 7px;
   background-color: #d9d9d9;
-}
-
-.macbook-pro .text-wrapper-24 {
-  position: absolute;
-  top: 109px;
-  left: 30px;
-  font-family: "Inter-Regular", Helvetica;
-  font-weight: 400;
-  color: #000000;
-  font-size: 20px;
-  letter-spacing: 0;
-  line-height: normal;
-  white-space: nowrap;
 }
