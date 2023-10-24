@@ -112,20 +112,3 @@ input#password-input {
     /* grid-template-columns: 1fr 1fr; */
     padding: 3rem calc((100vw - 1300px)/2);
 }
-
-/* this is code from page 1, not sure what it means, will come back */
-@media only screen and (max-width: 680px) {
-    div.footer_links_container {
-        min-width: 100px;
-    }
-
-    div.footer_links_subcontainer {
-        flex-wrap: wrap;
-    }
-
-    ul.footer_links_list {
-        width: 100%;
-        display: block;
-        flex-shrink: 0;
-    }
-}
