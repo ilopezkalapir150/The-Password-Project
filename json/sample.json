@@ -1,0 +1,36 @@
+{
+    "schoolId": 0,
+    "schoolName": "",
+    "schoolDisplayName": "",
+    "schoolActive": true,
+    "schoolUrl": "",
+    "schoolRules": [
+        {
+            "ruleId": 0,
+            "ruleName": "",
+            "ruleDisplayName": "",
+            "ruleParent": 0,
+            "ruleDeterministic": true,
+            "ruleActive": true,
+            "ruleActiveRequirements": [],
+            "ruleType": "",
+            "ruleValues": [],
+
+            "ruleCreatedDate": 0.00,
+            "ruleModifiedDate": 0.00
+        }
+    ],
+    "schoolCreatedDate": 0.00,
+    "schoolModifiedDate": 0.00,
+
+
+    "comments": [
+        "Ethan Ernst & Roger Wang | Created 2023-10-24 | Updated 2023-10-24", 
+        "Note that this comment variable is not part of the .json design.", 
+        "This .json file is a design effort in generalizing rules, so that ", 
+        "a single file can contain all information and rules ", 
+        "relevant to the school.", 
+        "ruleTypes contain a string of a set of predefined rule set that ", 
+        "we can parse and determine if the rule is satisfied."
+    ]
+}
