@@ -1,10 +1,12 @@
 {
-    "schoolId": 0,
-    "schoolName": "",
-    "schoolDisplayName": "",
-    "schoolActive": true,
-    "schoolUrl": "",
-    "schoolRules": [
+    "groupId": 0,
+    "groupName": "",
+    "groupDisplayName": "",
+    "groupLogo": "",
+    "groupActive": true,
+    "groupUrl": "",
+    "groupCaseSensitive": true,
+    "groupRules": [
         {
             "ruleId": 0,
             "ruleName": "",
@@ -16,12 +18,12 @@
             "ruleType": "",
             "ruleValues": [],
 
-            "ruleCreatedDate": 0.00,
-            "ruleModifiedDate": 0.00
+            "ruleCreatedDateTime": 0,
+            "ruleModifiedDateTime": 0
         }
     ],
-    "schoolCreatedDate": 0.00,
-    "schoolModifiedDate": 0.00,
+    "groupCreatedDateTime": 0,
+    "groupModifiedDateTime": 0,
 
 
     "comments": [
@@ -29,7 +31,7 @@
         "Note that this comment variable is not part of the .json design.", 
         "This .json file is a design effort in generalizing rules, so that ", 
         "a single file can contain all information and rules ", 
-        "relevant to the school.", 
+        "relevant to the group (organization).", 
         "ruleTypes contain a string of a set of predefined rule set that ", 
         "we can parse and determine if the rule is satisfied."
     ]
