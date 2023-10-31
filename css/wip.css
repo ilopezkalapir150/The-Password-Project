@@ -84,6 +84,15 @@ input#password-input {
     border: solid 1px #000;
 }
 
+.PasswordRectangle {
+    overflow-y: scroll;
+    max-height: 380px;
+    width: 300px; 
+    margin: 0; 
+    padding: 0; 
+    border: solid 1px #000;
+    
+}
 .column-right {
     display: flex;
     flex-direction: column;
