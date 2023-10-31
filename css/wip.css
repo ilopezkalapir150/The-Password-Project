@@ -76,8 +76,12 @@ input#password-input {
 
 .rectangle {
     /* width: 750px; */
-    height: 380px;
-    background-color: #d3efff;
+    overflow-y: scroll;
+    max-height: 380px;
+    max-width: 750px;
+    margin: 0 auto; 
+    padding: 0;
+    border: solid 1px #000;
 }
 
 .column-right {
@@ -117,4 +121,8 @@ input#password-input {
     /* display: grid; */
     /* grid-template-columns: 1fr 1fr; */
     padding: 3rem calc((100vw - 1300px)/2);
+}
+
+.table {
+    margin: 0 auto;
 }
