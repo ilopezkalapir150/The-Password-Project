@@ -78,6 +78,7 @@ input#password-input {
 
 .rectangle {
     /* width: 750px; */
+    background-color: white;
     overflow-y: scroll;
     max-height: 380px;
     max-width: 750px;

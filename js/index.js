@@ -38,6 +38,8 @@ async function getRules() {
     }
     // console.log(swatRules);
     // console.log(swatRules.groupRules[0].ruleDisplayName);
-    document.getElementById("rules1").innerHTML = "<b>Your current rules:</b> " + swatRules.groupRules[0].ruleDisplayName;
+    document.getElementById("rules0").innerHTML = "<b>Your current rules:</b> " + swatRules.groupRules[0].ruleDisplayName;
+    document.getElementById("rules1").innerHTML = swatRules.groupRules[0].ruleDisplayName;
+
 }
 
