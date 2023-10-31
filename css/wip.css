@@ -144,3 +144,7 @@ input#password-input {
 .table {
     margin: 0 auto;
 }
+
+.rule-text {
+    color:black;
+}
