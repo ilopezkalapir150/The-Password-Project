@@ -1,15 +1,4 @@
-function myFunc() {
-    alert("You clicked it!");
-}
-
-// this is not currently working, need to figure out CORS error
-async function getRules() {
-    console.log("beep");
-    // const response = await fetch("../json/swat-sample.json");
-    // const data = await response.json();
-    // const obj = JSON.parse(data);
-
-    let swatRules =
+[
     {
         "groupId": 1,
         "groupName": "swarthmore",
@@ -36,7 +25,4 @@ async function getRules() {
         "groupCreatedDateTime": 0,
         "groupModifiedDateTime": 0
     }
-    // console.log(swatRules);
-    console.log(swatRules.groupRules[0].ruleDisplayName);
-}
-
+]

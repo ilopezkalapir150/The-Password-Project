@@ -16,6 +16,8 @@ nav {
     justify-content: space-between;
     align-items: center;
     padding: 0rem calc((100vw - 1300px)/2);
+    /* line-height: 100px; */
+    /* padding: 100 100px:  */
 }
 
 .logo {
@@ -115,8 +117,8 @@ input#password-input {
 }
 
 .logo-button {
-    width: 100px;
-    height: 100px;
+    width: 120px;
+    height: 120px;
     border: none;
     background-color: transparent;
     cursor: pointer;
@@ -128,8 +130,8 @@ input#password-input {
 }
 
 .school-logo {
-    width: 100%;
-    height: 100%;
+    width: 90%;
+    height: 90%;
     object-fit: contain;
 }
 
