@@ -9,6 +9,7 @@
     </head>
 
     <body>
+        <script src="js/index.js"></script>
         <header>
             <div class="horizontal-color" 
                 style="height: 10px; background-color: #4c8fc2;"></div>
@@ -40,10 +41,11 @@
             <div>
                 <h2>Password Checker</h2>
                 <p>Some introductory text about how to use this tool.</p>
-                <input id="password-input" type="text" maxlength="256" 
+                <!-- <input id="password-input" type="text" style="-webkit-text-security: circle" maxlength="256" 
+                    placeholder="Enter your password here..."> -->
+                <input id="password-input" type="password" maxlength="256"
                     placeholder="Enter your password here...">
-                <br>
-                
+                <input type="checkbox" id="eye" onclick="togglePassword()"/>
             </div>
         </div>
 

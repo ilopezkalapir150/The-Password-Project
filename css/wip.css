@@ -158,3 +158,8 @@ tr.selected {
 .text-center {
     text-align: center;
   }
+
+  #eye {
+      /* right: 50px;
+      top: 6px; */
+  }

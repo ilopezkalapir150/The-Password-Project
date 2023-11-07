@@ -55,4 +55,13 @@ function selectPassword(row){
     console.log(row.children[1].innerText);
 }
 
+function togglePassword(){
+    var x = document.getElementById("password-input");
+    if (x.type === "password") {
+        x.type = "text";
+    } else {
+        x.type = "password";
+    }
+}
+
 
