@@ -3,45 +3,130 @@ function myFunc() {
 }
 
 // this is not currently working, need to figure out CORS error
-async function getRules() {
+async function setRules(btn) {
     console.log("beep");
     // const response = await fetch("../json/swat-sample.json");
     // const data = await response.json();
     // const obj = JSON.parse(data);
 
+    let table = document.getElementById("school-list");
+
     let swatRules =
-    {
-        "groupId": 1,
-        "groupName": "swarthmore",
-        "groupDisplayName": "Swarthmore College",
-        "groupLogo": "",
-        "groupActive": true,
-        "groupUrl": "www.swarthmore.edu",
-        "groupCaseSensitive": true,
-        "groupRules": [
             {
-                "ruleId": 0,
-                "ruleName": "rule0",
-                "ruleDisplayName": "Minimum password length 8 characters",
-                "ruleParent": 0,
-                "ruleDeterministic": true,
-                "ruleActive": true,
-                "ruleActiveRequirements": [],
-                "ruleType": "",
-                "ruleValues": [],
-                "ruleCreatedDateTime": 0,
-                "ruleModifiedDateTime": 0
+                "groupId": 1,
+                "groupName": "swarthmore",
+                "groupDisplayName": "Swarthmore College",
+                "groupLogo": "",
+                "groupActive": true,
+                "groupUrl": "www.swarthmore.edu",
+                "groupCaseSensitive": true,
+                "groupRules": [
+                    {
+                        "ruleId": 0,
+                        "ruleName": "rule0",
+                        "ruleDisplayName": "Minimum password length 8 characters",
+                        "ruleParent": 0,
+                        "ruleDeterministic": true,
+                        "ruleActive": true,
+                        "ruleActiveRequirements": [],
+                        "ruleType": "",
+                        "ruleValues": [],
+                        "ruleCreatedDateTime": 0,
+                        "ruleModifiedDateTime": 0
+                    },
+                    {
+                        "ruleId": 1,
+                        "ruleName": "rule1",
+                        "ruleDisplayName": "Require one uppercase letter",
+                        "ruleParent": 0,
+                        "ruleDeterministic": true,
+                        "ruleActive": true,
+                        "ruleActiveRequirements": [],
+                        "ruleType": "",
+                        "ruleValues": [],
+                        "ruleCreatedDateTime": 0,
+                        "ruleModifiedDateTime": 0
+                    },
+                    {
+                        "ruleId": 2,
+                        "ruleName": "rule2",
+                        "ruleDisplayName": "Require one lowercase letter",
+                        "ruleParent": 0,
+                        "ruleDeterministic": true,
+                        "ruleActive": true,
+                        "ruleActiveRequirements": [],
+                        "ruleType": "",
+                        "ruleValues": [],
+                        "ruleCreatedDateTime": 0,
+                        "ruleModifiedDateTime": 0
+                    },
+                    {
+                        "ruleId": 3,
+                        "ruleName": "rule3",
+                        "ruleDisplayName": "Require one numeric character",
+                        "ruleParent": 0,
+                        "ruleDeterministic": true,
+                        "ruleActive": true,
+                        "ruleActiveRequirements": [],
+                        "ruleType": "",
+                        "ruleValues": [],
+                        "ruleCreatedDateTime": 0,
+                        "ruleModifiedDateTime": 0
+                    },
+                    {
+                        "ruleId": 4,
+                        "ruleName": "rule4",
+                        "ruleDisplayName": "Require one special character",
+                        "ruleParent": 0,
+                        "ruleDeterministic": true,
+                        "ruleActive": true,
+                        "ruleActiveRequirements": [],
+                        "ruleType": "",
+                        "ruleValues": [],
+                        "ruleCreatedDateTime": 0,
+                        "ruleModifiedDateTime": 0
+                    }
+                ],
+                "groupCreatedDateTime": 0,
+                "groupModifiedDateTime": 0
             }
-        ],
-        "groupCreatedDateTime": 0,
-        "groupModifiedDateTime": 0
-    }
     // console.log(swatRules);
     // console.log(swatRules.groupRules[0].ruleDisplayName);
-    document.getElementById("school1").innerHTML = swatRules.groupDisplayName;
-    document.getElementById("rules0").innerHTML = "<b>Your current rules:</b> " + swatRules.groupRules[0].ruleDisplayName;
-    document.getElementById("rules1").innerHTML = swatRules.groupRules[0].ruleDisplayName;
+    document.getElementById("rules-test").innerHTML = "<b>Your current rules:</b> " + swatRules.groupRules[0].ruleDisplayName;
 
+
+    //button selection toggle and add/remove rules in table
+    if (btn.classList.contains('btn-selected')) {
+        btn.classList.remove('btn-selected');
+        document.getElementById("school-item-"+swatRules.groupId).remove();
+    }
+    else {
+        btn.classList.add('btn-selected');
+        let row = document.createElement('tr');
+        row.setAttribute("id", "school-item-" + swatRules.groupId);
+        let data = document.createElement('td');
+        data.innerHTML = swatRules.groupDisplayName;
+        for (let i = 0; i < swatRules.groupRules.length; i++) {
+            let p = document.createElement("li");
+            p.innerHTML = swatRules.groupRules[i].ruleDisplayName;
+            data.append(p);
+        }
+        row.appendChild(data);
+        table.appendChild(row);
+    }
+
+    //handle placeholder text
+    // console.log(table);
+    if (document.getElementById('table-placeholder')) {
+        document.getElementById('table-placeholder').remove()
+    } else if (table.childNodes.length == 2) { //2 bcause of tr and tr 
+        let row = document.createElement('tr');
+        let plcholder = document.createElement('td');
+        row.setAttribute("id", "table-placeholder");
+        plcholder.innerText = "No rules selected!";
+        row.appendChild(plcholder);
+        table.appendChild(row);
+    }
 }
 
 function selectPassword(row){

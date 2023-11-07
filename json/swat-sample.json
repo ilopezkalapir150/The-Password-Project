@@ -20,6 +20,58 @@
                 "ruleValues": [],
                 "ruleCreatedDateTime": 0,
                 "ruleModifiedDateTime": 0
+            },
+            {
+                "ruleId": 1,
+                "ruleName": "rule1",
+                "ruleDisplayName": "Require one uppercase letter",
+                "ruleParent": 0,
+                "ruleDeterministic": true,
+                "ruleActive": true,
+                "ruleActiveRequirements": [],
+                "ruleType": "",
+                "ruleValues": [],
+                "ruleCreatedDateTime": 0,
+                "ruleModifiedDateTime": 0
+            },
+            {
+                "ruleId": 2,
+                "ruleName": "rule2",
+                "ruleDisplayName": "Require one lowercase letter",
+                "ruleParent": 0,
+                "ruleDeterministic": true,
+                "ruleActive": true,
+                "ruleActiveRequirements": [],
+                "ruleType": "",
+                "ruleValues": [],
+                "ruleCreatedDateTime": 0,
+                "ruleModifiedDateTime": 0
+            },
+            {
+                "ruleId": 3,
+                "ruleName": "rule3",
+                "ruleDisplayName": "Require one numeric character",
+                "ruleParent": 0,
+                "ruleDeterministic": true,
+                "ruleActive": true,
+                "ruleActiveRequirements": [],
+                "ruleType": "",
+                "ruleValues": [],
+                "ruleCreatedDateTime": 0,
+                "ruleModifiedDateTime": 0
+            },
+            {
+                "ruleId": 4,
+                "ruleName": "rule4",
+                "ruleDisplayName": "Require one special character",
+                "ruleParent": 0,
+                "ruleDeterministic": true,
+                "ruleActive": true,
+                "ruleActiveRequirements": [],
+                "ruleType": "",
+                "ruleValues": [],
+                "ruleCreatedDateTime": 0,
+                "ruleModifiedDateTime": 0
             }
         ],
         "groupCreatedDateTime": 0,
