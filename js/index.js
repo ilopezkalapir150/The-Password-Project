@@ -44,3 +44,15 @@ async function getRules() {
 
 }
 
+function selectPassword(row){
+    console.log("password selected");
+
+    const previousSelection = document.querySelector('tr.selected');
+    if (previousSelection) {
+        previousSelection.classList.remove('selected');
+    }
+    row.classList.add('selected');
+    console.log(row.children[1].innerText);
+}
+
+

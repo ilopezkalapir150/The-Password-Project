@@ -149,3 +149,8 @@ input#password-input {
 .rule-text {
     color:black;
 }
+
+tr.selected {
+    background-color: rgb(181, 181, 181);
+    color: white;
+}
