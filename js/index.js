@@ -2,6 +2,33 @@ function myFunc() {
     alert("You clicked it!");
 }
 
+function loadRules(){
+    //get list of buttons inside of rightside button container
+    //still trying to figure out reading json file
+    // var xhttp = new XMLHttpRequest();
+    // xhttp.onreadystatechange = function () {
+    //     if (this.readyState == 4 && this.status == 200) {
+    //         // Do something here with this.responseText
+    //         console.log(JSON.parse(JSON.stringify(this)));
+    //     }
+    // };
+    // xhttp.open("GET", "json/swat-sample.json", true);
+    // xhttp.send();
+    // console.log("Request Sent");
+
+    let buttons = document.querySelectorAll("div.button-container button");
+    //loop through dropdown items and update with new rules
+    //from json, match groupID to dd-[i]]
+    //there must be an easier way to do this...
+    for (let i = 0; i < buttons.length; i++ ){
+        let content = document.getElementById("dd-"+i);
+        let item = document.createElement("li");
+        item.setAttribute("id", "dd-rules-"+i);
+        item.innerText = "loaded!";
+        content.appendChild(item);
+    }
+}
+
 // this is not currently working, need to figure out CORS error
 async function setRules(btn) {
     console.log("beep");
@@ -13,7 +40,7 @@ async function setRules(btn) {
 
     let swatRules =
             {
-                "groupId": 1,
+                "groupId": 0,
                 "groupName": "swarthmore",
                 "groupDisplayName": "Swarthmore College",
                 "groupLogo": "",
