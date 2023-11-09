@@ -2,9 +2,12 @@ function myFunc() {
     alert("You clicked it!");
 }
 
+//on the website loading up, load json rules and display in button dropdowns 
 function loadRules(){
     //get list of buttons inside of rightside button container
     //still trying to figure out reading json file
+    //the code below kind of works when running a local server w vscode extension
+
     // var xhttp = new XMLHttpRequest();
     // xhttp.onreadystatechange = function () {
     //     if (this.readyState == 4 && this.status == 200) {
@@ -29,7 +32,8 @@ function loadRules(){
     }
 }
 
-// this is not currently working, need to figure out CORS error
+//when school button clicked, load rules wherever they need to go to be applied to password
+//this may include checklist display (bottom of page), perhaps to an exterior password checker func?
 async function setRules(btn) {
     console.log("beep");
     // const response = await fetch("../json/swat-sample.json");
@@ -38,6 +42,8 @@ async function setRules(btn) {
 
     let table = document.getElementById("school-list");
 
+    //this is just example rule json, need to figure out importing json file
+    //figure out CORS error
     let swatRules =
             {
                 "groupId": 0,
@@ -156,6 +162,7 @@ async function setRules(btn) {
     }
 }
 
+//highlights password on page 2 in "select password" table
 function selectPassword(row){
     console.log("password selected");
 
@@ -164,9 +171,11 @@ function selectPassword(row){
         previousSelection.classList.remove('selected');
     }
     row.classList.add('selected');
-    console.log(row.children[1].innerText);
+    console.log(row.children[1].innerText); //this is the password we will be checking
+
 }
 
+//page 1: toggle btw show/hide entered password
 function togglePassword(){
     var x = document.getElementById("password-input");
     if (x.type === "password") {
