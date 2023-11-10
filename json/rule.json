@@ -8,8 +8,10 @@
     "containNumber": 0,
     "containLower": 0,
     "containUpper": 0,
+    "containLetter": 0,
     "containSpecial": [1, "a list of characters recognized as special characters"],
     "containTypes": [2, "int of the minimum number of types needed", "a list of characters recognized as special characters"],
+    "containBroadTypes": [2, "int of the minimum number of types needed", "a list of characters recognized as special characters"],
     "bannedPasswords": [1, "list of passwords not permitted to be used (case insensitive)"],
     "bannedCaseSensitivePasswords": [1, "list of passwords not permitted to be used (must match case)"],
     "bannedWords": [1, "list of words that cannot be contained by the password (case insensitive)"],
@@ -20,5 +22,12 @@
     "noRepeated": [1, "int representing the minimum number of repeated characters that is not allowed"],
     "notBadPassword": [0, "this rule matches your password with a list of known bad passwords from an API"],
     "noDictWords": [1, "int representing the minimum length of words in a dictionary API that can be matched"],
-    "nondeterministicRule": 0
+    "nondeterministicRule": 0,
+    
+    
+    "comments": [
+        "containTypes vs containBroad Types:",
+        "containTypes checks for containNumber, containLower, containUpper, and containSpecial (return maximum number of 4)",
+        "containBroadTypes checks for containNumber, containLetter, and containSpecial (return maximum number of 3)"
+    ]
 }
