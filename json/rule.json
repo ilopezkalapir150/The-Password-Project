@@ -9,7 +9,7 @@
     "containLower": 0,
     "containUpper": 0,
     "containSpecial": [1, "a list of characters recognized as special characters"],
-    "containTypes": [1, "int of the minimum number of types needed"],
+    "containTypes": [2, "int of the minimum number of types needed", "a list of characters recognized as special characters"],
     "bannedPasswords": [1, "list of passwords not permitted to be used (case insensitive)"],
     "bannedCaseSensitivePasswords": [1, "list of passwords not permitted to be used (must match case)"],
     "bannedWords": [1, "list of words that cannot be contained by the password (case insensitive)"],

@@ -134,28 +134,53 @@ class Rule {
 
 class containNumberRule extends Rule {
     decide(password = "") {
-        let expression = /\w*\d\w*/;
+        let expression = /\d/;
         return expression.test(password);
     }
 }
 
 class containLowerRule extends Rule {
     decide(password = "") {
-        let expression = 
+        let expression = /[a-z]/;
+        return expression.test(password);
     }
 }
 
 class containUpperRule extends Rule {
-
+    decide(password = "") {
+        let expression = /[A-Z]/;
+        return expression.test(password);
+    }
 }
 
 class containSpecialRule extends Rule {
+    decide(password = "") {
+        // The following characters have special meaning in RegEx.
+        // Therefore, they need to be prepended by "\" before added.
+        let reserved = ["+", "*", "?", "^", "$", "\\", ".", "[", "]", "{", 
+                        "}", "(", ")", "|", "/"];
+        
+        // Building the RegEx expression.
+        let expression = "";
+        for(let i = 0; i < this.values[0].length; i++) {
+            if(reserved.includes(this.values[0][i])) {
+                expression += "\\";
+            }
+            expression += this.values[0][i];
+        }
+        expression = "[" + expression + "]";
+        console.log(expression);
+        expression = new RegExp(expression);
 
+        return expression.test(password);
+    }
 }
 
 // Test code. Please delete before deployment.
-var rule = new containNumberRule();
-console.log(rule.decide(""));
+//var rule = new containNumberRule();
+//console.log(rule.decide("1"));
 
-//var rule = 1;
-//console.log(typeof rule == "number");
+// Testing containSpecialRule.
+//var rule = new containSpecialRule();
+//rule.values = [["!", "?", "\\"]];
+//console.log(rule.decide("12\\!3"));
