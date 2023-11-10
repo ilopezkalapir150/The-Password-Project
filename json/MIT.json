@@ -1,11 +1,11 @@
 [
     {
         "groupId": 1,
-        "groupName": "swarthmore",
-        "groupDisplayName": "Swarthmore College",
+        "groupName": "MIT",
+        "groupDisplayName": "MIT",
         "groupLogo": "",
         "groupActive": true,
-        "groupUrl": "www.swarthmore.edu",
+        "groupUrl": "www.mit.edu",
         "groupCaseSensitive": true,
         "groupRules": [
             {
@@ -24,25 +24,26 @@
             {
                 "ruleId": 1,
                 "ruleName": "rule1",
-                "ruleDisplayName": "Require one uppercase letter",
+                "ruleDisplayName": "Contains two different character classes",
                 "ruleParent": 0,
                 "ruleDeterministic": true,
                 "ruleActive": true,
                 "ruleActiveRequirements": [],
-                "ruleType": "containUpper",
-                "ruleValues": [],
+                "ruleType": "containTypes",
+                "ruleValues": ["2", ["`","~","!","@","#","$","%","^","&","*","(",")","-","_","=","+","[","{","]",
+                "}","|","\\",";",":","\"","'",",","<",".",">","/","?"]],
                 "ruleCreatedDateTime": 0,
                 "ruleModifiedDateTime": 0
             },
             {
                 "ruleId": 2,
                 "ruleName": "rule2",
-                "ruleDisplayName": "Require one lowercase letter",
+                "ruleDisplayName": "Cannot be the same as current password or based on Kerberos username",
                 "ruleParent": 0,
-                "ruleDeterministic": true,
+                "ruleDeterministic": false,
                 "ruleActive": true,
                 "ruleActiveRequirements": [],
-                "ruleType": "containLower",
+                "ruleType": "nondeterministicRule",
                 "ruleValues": [],
                 "ruleCreatedDateTime": 0,
                 "ruleModifiedDateTime": 0
@@ -50,40 +51,13 @@
             {
                 "ruleId": 3,
                 "ruleName": "rule3",
-                "ruleDisplayName": "Require one numeric character",
+                "ruleDisplayName": "Cannot contain a word in the dictionary",
                 "ruleParent": 0,
                 "ruleDeterministic": true,
                 "ruleActive": true,
                 "ruleActiveRequirements": [],
-                "ruleType": "containNumber",
-                "ruleValues": [],
-                "ruleCreatedDateTime": 0,
-                "ruleModifiedDateTime": 0
-            },
-            {
-                "ruleId": 4,
-                "ruleName": "rule4",
-                "ruleDisplayName": "Require one special character",
-                "ruleParent": 0,
-                "ruleDeterministic": true,
-                "ruleActive": true,
-                "ruleActiveRequirements": [],
-                "ruleType": "containSpecial",
-                "ruleValues": [["`","~","!","@","#","$","%","^","&","*","(",")","-","_","=","+","[","{","]",
-                "}","|","\\",";",":","\"","'",",","<",".",">","/","?"]],
-                "ruleCreatedDateTime": 0,
-                "ruleModifiedDateTime": 0
-            },
-            {
-                "ruleId": 5,
-                "ruleName": "rule5",
-                "ruleDisplayName": "Password can never be reused",
-                "ruleParent": 0,
-                "ruleDeterministic": false,
-                "ruleActive": true,
-                "ruleActiveRequirements": [],
-                "ruleType": "nondeterministicRule",
-                "ruleValues": [],
+                "ruleType": "noDictWords",
+                "ruleValues": [5],
                 "ruleCreatedDateTime": 0,
                 "ruleModifiedDateTime": 0
             }
