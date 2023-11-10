@@ -16,8 +16,8 @@
                 "ruleDeterministic": true,
                 "ruleActive": true,
                 "ruleActiveRequirements": [],
-                "ruleType": "",
-                "ruleValues": [],
+                "ruleType": "minimumLength",
+                "ruleValues": [8],
                 "ruleCreatedDateTime": 0,
                 "ruleModifiedDateTime": 0
             },
@@ -29,7 +29,7 @@
                 "ruleDeterministic": true,
                 "ruleActive": true,
                 "ruleActiveRequirements": [],
-                "ruleType": "",
+                "ruleType": "containUpper",
                 "ruleValues": [],
                 "ruleCreatedDateTime": 0,
                 "ruleModifiedDateTime": 0
@@ -42,7 +42,7 @@
                 "ruleDeterministic": true,
                 "ruleActive": true,
                 "ruleActiveRequirements": [],
-                "ruleType": "",
+                "ruleType": "containLower",
                 "ruleValues": [],
                 "ruleCreatedDateTime": 0,
                 "ruleModifiedDateTime": 0
@@ -55,7 +55,7 @@
                 "ruleDeterministic": true,
                 "ruleActive": true,
                 "ruleActiveRequirements": [],
-                "ruleType": "",
+                "ruleType": "containNumber",
                 "ruleValues": [],
                 "ruleCreatedDateTime": 0,
                 "ruleModifiedDateTime": 0
@@ -68,7 +68,21 @@
                 "ruleDeterministic": true,
                 "ruleActive": true,
                 "ruleActiveRequirements": [],
-                "ruleType": "",
+                "ruleType": "containSpecial",
+                "ruleValues": ["`","~","!","@","#","$","%","^","&","*","(",")","-","_","=","+","[","{","]",
+                "}","|","\\",";",":","\"","'",",","<",".",">","/","?"],
+                "ruleCreatedDateTime": 0,
+                "ruleModifiedDateTime": 0
+            },
+            {
+                "ruleId": 5,
+                "ruleName": "rule5",
+                "ruleDisplayName": "Password can never be reused",
+                "ruleParent": 0,
+                "ruleDeterministic": false,
+                "ruleActive": true,
+                "ruleActiveRequirements": [],
+                "ruleType": "nondeterministicRule",
                 "ruleValues": [],
                 "ruleCreatedDateTime": 0,
                 "ruleModifiedDateTime": 0
