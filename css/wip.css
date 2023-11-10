@@ -151,8 +151,8 @@ input#password-input {
 }
 
 tr.selected {
-    background-color: rgb(181, 181, 181);
-    color: white;
+    background-color: rgb(181, 181, 181) !important;
+    color: white !important;
 }
 
 .text-center {
