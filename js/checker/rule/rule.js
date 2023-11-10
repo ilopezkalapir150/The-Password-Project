@@ -76,6 +76,19 @@ class Rule {
     }
 
     set requirements(requirements) {
+        // Check if the passed in argument is an array.
+        if(!Array.isArray(requirements)) {
+            throw new Error("Rule.requirements: setter argument not an array.");
+        }
+
+        // Check if each element in the array is a Rule.
+        for(let i = 0; i < requirements.length; i++) {
+            if(!(requirements[i] instanceof Rule)) {
+                throw new Error("Rule.requirements: setter argument " + 
+                    "contains objects that is not a Rule.");
+            }
+        }
+
         this._requirements = requirements;
     }
 
@@ -96,33 +109,53 @@ class Rule {
     }
 
     get createdDateTime() {
-
-    }
-    
-    set setRequirements(requirements) {
-
-        this.requirements = requirements;
+        return this._createdDateTime;
     }
 
     active(password = "") {
-        for(let i = 0; i < this.requirements.length; i++) {
-            
+        if(!this.active) {
+            return false;
         }
+        for(let i = 0; i < this.requirements.length; i++) {
+            if(!this.requirements[i].decide(password)) {
+                return false;
+            }
+        }
+        return true;
     }
 
     /**
      * 
      */
     decide(password = "") {
-        throw new Error("Rule.decide(): method not implemented.");
-    }
-  
-    eat() {
-        console.log("eating");
+        throw new Error("Rule.decide: method not implemented.");
     }
 }
 
+class containNumberRule extends Rule {
+    decide(password = "") {
+        let expression = /\w*\d\w*/;
+        return expression.test(password);
+    }
+}
 
+class containLowerRule extends Rule {
+    decide(password = "") {
+        let expression = 
+    }
+}
 
-myObject.id = 1
-myObject.id
+class containUpperRule extends Rule {
+
+}
+
+class containSpecialRule extends Rule {
+
+}
+
+// Test code. Please delete before deployment.
+var rule = new containNumberRule();
+console.log(rule.decide(""));
+
+//var rule = 1;
+//console.log(typeof rule == "number");
