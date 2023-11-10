@@ -124,8 +124,7 @@ async function setRules(btn) {
                 "groupModifiedDateTime": 0
             }
     // console.log(swatRules);
-    // console.log(swatRules.groupRules[0].ruleDisplayName);
-    document.getElementById("rules-test").innerHTML = "<b>Your current rules:</b> " + swatRules.groupRules[0].ruleDisplayName;
+    // console.log(swatRules.groupRules[0].ruleDisplayName)
 
 
     //button selection toggle and add/remove rules in table
@@ -137,6 +136,7 @@ async function setRules(btn) {
         btn.classList.add('btn-selected');
         let row = document.createElement('tr');
         row.setAttribute("id", "school-item-" + swatRules.groupId);
+        console.log("row");
         let data = document.createElement('td');
         data.innerHTML = swatRules.groupDisplayName;
         for (let i = 0; i < swatRules.groupRules.length; i++) {
