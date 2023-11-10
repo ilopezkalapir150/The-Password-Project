@@ -8,7 +8,7 @@
     "containNumber": 0,
     "containLower": 0,
     "containUpper": 0,
-    "containSpecial": 0,
+    "containSpecial": [1, "a list of characters recognized as special characters"],
     "containTypes": [1, "int of the minimum number of types needed"],
     "bannedPasswords": [1, "list of passwords not permitted to be used (case insensitive)"],
     "bannedCaseSensitivePasswords": [1, "list of passwords not permitted to be used (must match case)"],
