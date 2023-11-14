@@ -178,10 +178,16 @@ function selectPassword(row){
 //page 1: toggle btw show/hide entered password
 function togglePassword(){
     var x = document.getElementById("password-input");
+    var y = document.getElementById("eye-open"); 
+    var z = document.getElementById("eye-closed"); 
     if (x.type === "password") {
-        x.type = "text";
+        x.type = "text"; 
+        z.style.display = "none"; 
+        y.style.display = "inline"; 
     } else {
         x.type = "password";
+        y.style.display = "none"; 
+        z.style.display = "inline"; 
     }
 }
 
