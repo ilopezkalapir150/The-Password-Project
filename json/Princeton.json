@@ -1,0 +1,41 @@
+[
+    {
+        "groupId": 1,
+        "groupName": "Princeton",
+        "groupDisplayName": "Princeton University",
+        "groupLogo": "",
+        "groupActive": true,
+        "groupUrl": "www.princeton.edu",
+        "groupCaseSensitive": true,
+        "groupRules": [
+            {
+                "ruleId": 0,
+                "ruleName": "rule0",
+                "ruleDisplayName": "Minimum password length 16 characters",
+                "ruleParent": 0,
+                "ruleDeterministic": true,
+                "ruleActive": true,
+                "ruleActiveRequirements": [],
+                "ruleType": "minimumLength",
+                "ruleValues": [16],
+                "ruleCreatedDateTime": 0,
+                "ruleModifiedDateTime": 0
+            },
+            {
+                "ruleId": 1,
+                "ruleName": "rule1",
+                "ruleDisplayName": "Maximum password length 256 characters",
+                "ruleParent": 0,
+                "ruleDeterministic": true,
+                "ruleActive": true,
+                "ruleActiveRequirements": [],
+                "ruleType": "maximumLength",
+                "ruleValues": [256],
+                "ruleCreatedDateTime": 0,
+                "ruleModifiedDateTime": 0
+            }
+        ],
+        "groupCreatedDateTime": 0,
+        "groupModifiedDateTime": 0
+    }
+]
