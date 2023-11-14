@@ -1,0 +1,184 @@
+[
+    {
+        "groupId": 1,
+        "groupName": "Berkeley",
+        "groupDisplayName": "University of California, Berkeley",
+        "groupLogo": "",
+        "groupActive": true,
+        "groupUrl": "www.berkeley.edu",
+        "groupCaseSensitive": true,
+        "groupRules": [
+            {
+                "ruleId": 0,
+                "ruleName": "rule0",
+                "ruleDisplayName": "Minimum length is 8",
+                "ruleParent": 0,
+                "ruleDeterministic": true,
+                "ruleActive": true,
+                "ruleActiveRequirements": [],
+                "ruleType": "minimumLength",
+                "ruleValues": [8],
+                "ruleCreatedDateTime": 0,
+                "ruleModifiedDateTime": 0
+            },
+            {
+                "ruleId": 1,
+                "ruleName": "rule1",
+                "ruleDisplayName": "Uppercase required for length 8-19",
+                "ruleParent": 0,
+                "ruleDeterministic": true,
+                "ruleActive": true,
+                "ruleActiveRequirements": [{
+                    "ruleId": 0,
+                    "ruleName": "rule1.1",
+                    "ruleDisplayName": "Maximum length is 19",
+                    "ruleParent": 0,
+                    "ruleDeterministic": true,
+                    "ruleActive": true,
+                    "ruleActiveRequirements": [],
+                    "ruleType": "maximumLength",
+                    "ruleValues": [19],
+                    "ruleCreatedDateTime": 0,
+                    "ruleModifiedDateTime": 0
+                }],
+                "ruleType": "containUpper",
+                "ruleValues": [],
+                "ruleCreatedDateTime": 0,
+                "ruleModifiedDateTime": 0
+            },
+            {
+                "ruleId": 2,
+                "ruleName": "rule2",
+                "ruleDisplayName": "Lowercase required for length 8-19",
+                "ruleParent": 0,
+                "ruleDeterministic": true,
+                "ruleActive": true,
+                "ruleActiveRequirements": [{
+                    "ruleId": 0,
+                    "ruleName": "rule1.1",
+                    "ruleDisplayName": "Maximum length is 19",
+                    "ruleParent": 0,
+                    "ruleDeterministic": true,
+                    "ruleActive": true,
+                    "ruleActiveRequirements": [],
+                    "ruleType": "maximumLength",
+                    "ruleValues": [19],
+                    "ruleCreatedDateTime": 0,
+                    "ruleModifiedDateTime": 0
+                }],
+                "ruleType": "containLower",
+                "ruleValues": [],
+                "ruleCreatedDateTime": 0,
+                "ruleModifiedDateTime": 0
+            },
+            {
+                "ruleId": 3,
+                "ruleName": "rule3",
+                "ruleDisplayName": "Numbers required for length 8-15",
+                "ruleParent": 0,
+                "ruleDeterministic": true,
+                "ruleActive": true,
+                "ruleActiveRequirements": [{
+                    "ruleId": 3,
+                    "ruleName": "rule3.1",
+                    "ruleDisplayName": "Maximum length is 15",
+                    "ruleParent": 0,
+                    "ruleDeterministic": true,
+                    "ruleActive": true,
+                    "ruleActiveRequirements": [],
+                    "ruleType": "maximumLength",
+                    "ruleValues": [15],
+                    "ruleCreatedDateTime": 0,
+                    "ruleModifiedDateTime": 0
+                }],
+                "ruleType": "containNumber",
+                "ruleValues": [],
+                "ruleCreatedDateTime": 0,
+                "ruleModifiedDateTime": 0
+            },
+            {
+                "ruleId": 4,
+                "ruleName": "rule4",
+                "ruleDisplayName": "Contain symbol for maximum length of 11",
+                "ruleParent": 0,
+                "ruleDeterministic": true,
+                "ruleActive": true,
+                "ruleActiveRequirements": [{
+                    "ruleId": 4,
+                    "ruleName": "rule4.1",
+                    "ruleDisplayName": "Maximum length is 11",
+                    "ruleParent": 0,
+                    "ruleDeterministic": true,
+                    "ruleActive": true,
+                    "ruleActiveRequirements": [],
+                    "ruleType": "maximumLength",
+                    "ruleValues": [11],
+                    "ruleCreatedDateTime": 0,
+                    "ruleModifiedDateTime": 0
+                }],
+                "ruleType": "containTypes",
+                "ruleValues": ["3", ["`","~","!","@","#","$","%","^","&","*","(",")","-","_","=","+","[","{","]",
+                "}","|","\\",";",":","\"","'",",","<",".",">","/","?"]],
+                "ruleCreatedDateTime": 0,
+                "ruleModifiedDateTime": 0
+            },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+            {
+                "ruleId": 3,
+                "ruleName": "rule3",
+                "ruleDisplayName": "Cannot contain name or CalNet ID",
+                "ruleParent": 0,
+                "ruleDeterministic": false,
+                "ruleActive": true,
+                "ruleActiveRequirements": [],
+                "ruleType": "nondeterministicRule",
+                "ruleValues": [],
+                "ruleCreatedDateTime": 0,
+                "ruleModifiedDateTime": 0
+            },
+            {
+                "ruleId": 4,
+                "ruleName": "rule4",
+                "ruleDisplayName": "Cannot contain leading spaces",
+                "ruleParent": 0,
+                "ruleDeterministic": true,
+                "ruleActive": true,
+                "ruleActiveRequirements": [],
+                "ruleType": "bannedStartChar",
+                "ruleValues": [1, [" "]],
+                "ruleCreatedDateTime": 0,
+                "ruleModifiedDateTime": 0
+            },
+            {
+                "ruleId": 5,
+                "ruleName": "rule5",
+                "ruleDisplayName": "Cannot contain trailing spaces",
+                "ruleParent": 0,
+                "ruleDeterministic": true,
+                "ruleActive": true,
+                "ruleActiveRequirements": [],
+                "ruleType": "bannedEndChar",
+                "ruleValues": [1, [" "]],
+                "ruleCreatedDateTime": 0,
+                "ruleModifiedDateTime": 0
+            }
+        ],
+        "groupCreatedDateTime": 0,
+        "groupModifiedDateTime": 0
+    }
+]
