@@ -112,6 +112,14 @@ class Rule {
         return this._createdDateTime;
     }
 
+    set modifiedDateTime(modifiedDateTime) {
+        this._modifiedDateTime = modifiedDateTime;
+    }
+
+    get modifiedDateTime() {
+        return this._modifiedDateTime;
+    }
+
     active(password = "") {
         if(!this.active) {
             return false;
@@ -272,6 +280,20 @@ class containBroadTypesRule extends Rule {
             return false;
         }
     }
+}
+
+class nondeterministicRule extends Rule {
+    get active() {
+        return false;
+    }
+
+    decide(password = "") {
+        return true;
+    }
+}
+
+function parseRule(json) {
+    
 }
 
 // Test code. Please delete before deployment.
