@@ -20,6 +20,7 @@ function loadRules(){
     // console.log("Request Sent");
 
     let buttons = document.querySelectorAll("div.button-container button");
+    let rules = rules_swat[0]
     //loop through dropdown items and update with new rules
     //from json, match groupID to dd-[i]]
     //there must be an easier way to do this...
@@ -27,121 +28,49 @@ function loadRules(){
         let content = document.getElementById("dd-"+i);
         let item = document.createElement("li");
         item.setAttribute("id", "dd-rules-"+i);
-        item.innerText = "loaded!";
+
+        for (let i = 0; i < rules.groupRules.length; i++) {
+            item.innerHTML+= "- " + rules.groupRules[i].ruleDisplayName + "<br />";
+        }
         content.appendChild(item);
     }
+    //console.log(rules.groupName);
+    //console.log(rules.groupRules.length);
+
 }
 
 //when school button clicked, load rules wherever they need to go to be applied to password
 //this may include checklist display (bottom of page), perhaps to an exterior password checker func?
-async function setRules(btn) {
-    console.log("beep");
+function setRules(btn) {
+    //console.log(btn.id.slice(-1)); //this returns the number after logo-button-<NUM>
+    n = btn.id.slice(-1);
+    rule_box = document.querySelector("#dd-rules-" + n);
+    rule_school = document.querySelector("#name-" + n);
     // const response = await fetch("../json/swat-sample.json");
     // const data = await response.json();
     // const obj = JSON.parse(data);
 
     let table = document.getElementById("school-list");
 
-    //this is just example rule json, need to figure out importing json file
-    //figure out CORS error
-    let swatRules =
-            {
-                "groupId": 0,
-                "groupName": "swarthmore",
-                "groupDisplayName": "Swarthmore College",
-                "groupLogo": "",
-                "groupActive": true,
-                "groupUrl": "www.swarthmore.edu",
-                "groupCaseSensitive": true,
-                "groupRules": [
-                    {
-                        "ruleId": 0,
-                        "ruleName": "rule0",
-                        "ruleDisplayName": "Minimum password length 8 characters",
-                        "ruleParent": 0,
-                        "ruleDeterministic": true,
-                        "ruleActive": true,
-                        "ruleActiveRequirements": [],
-                        "ruleType": "",
-                        "ruleValues": [],
-                        "ruleCreatedDateTime": 0,
-                        "ruleModifiedDateTime": 0
-                    },
-                    {
-                        "ruleId": 1,
-                        "ruleName": "rule1",
-                        "ruleDisplayName": "Require one uppercase letter",
-                        "ruleParent": 0,
-                        "ruleDeterministic": true,
-                        "ruleActive": true,
-                        "ruleActiveRequirements": [],
-                        "ruleType": "",
-                        "ruleValues": [],
-                        "ruleCreatedDateTime": 0,
-                        "ruleModifiedDateTime": 0
-                    },
-                    {
-                        "ruleId": 2,
-                        "ruleName": "rule2",
-                        "ruleDisplayName": "Require one lowercase letter",
-                        "ruleParent": 0,
-                        "ruleDeterministic": true,
-                        "ruleActive": true,
-                        "ruleActiveRequirements": [],
-                        "ruleType": "",
-                        "ruleValues": [],
-                        "ruleCreatedDateTime": 0,
-                        "ruleModifiedDateTime": 0
-                    },
-                    {
-                        "ruleId": 3,
-                        "ruleName": "rule3",
-                        "ruleDisplayName": "Require one numeric character",
-                        "ruleParent": 0,
-                        "ruleDeterministic": true,
-                        "ruleActive": true,
-                        "ruleActiveRequirements": [],
-                        "ruleType": "",
-                        "ruleValues": [],
-                        "ruleCreatedDateTime": 0,
-                        "ruleModifiedDateTime": 0
-                    },
-                    {
-                        "ruleId": 4,
-                        "ruleName": "rule4",
-                        "ruleDisplayName": "Require one special character",
-                        "ruleParent": 0,
-                        "ruleDeterministic": true,
-                        "ruleActive": true,
-                        "ruleActiveRequirements": [],
-                        "ruleType": "",
-                        "ruleValues": [],
-                        "ruleCreatedDateTime": 0,
-                        "ruleModifiedDateTime": 0
-                    }
-                ],
-                "groupCreatedDateTime": 0,
-                "groupModifiedDateTime": 0
-            }
-    // console.log(swatRules);
-    // console.log(swatRules.groupRules[0].ruleDisplayName)
-
+    //ultimately do a for loop thru each rule in rules.js
+    let rules = rules_swat[0]; //replace 0 with n
+    
 
     //button selection toggle and add/remove rules in table
     if (btn.classList.contains('btn-selected')) {
         btn.classList.remove('btn-selected');
-        document.getElementById("school-item-"+swatRules.groupId).remove();
+        document.getElementById("school-item-" + n).remove();
     }
     else {
         btn.classList.add('btn-selected');
         let row = document.createElement('tr');
-        row.setAttribute("id", "school-item-" + swatRules.groupId);
-        console.log("row");
+        row.setAttribute("id", "school-item-" + n);
         let data = document.createElement('td');
-        data.innerHTML = swatRules.groupDisplayName;
-        for (let i = 0; i < swatRules.groupRules.length; i++) {
+        //data.innerHTML = rules.groupDisplayName;
+        data.innerHTML = rule_school.innerText;
+        for (let i = 0; i < rules.groupRules.length; i++) {
             let p = document.createElement("li");
-            p.innerHTML = swatRules.groupRules[i].ruleDisplayName;
+            p.innerHTML = rules.groupRules[i].ruleDisplayName;
             data.append(p);
         }
         row.appendChild(data);
