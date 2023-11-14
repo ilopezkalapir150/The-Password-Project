@@ -132,6 +132,47 @@ class Rule {
     }
 }
 
+class allowedCharsRule extends Rule {
+    decide(password = "") {
+        for(let i = 0; i < password.length; i++) {
+            if(!this.values[0].includes(password[i])) {
+                return false;
+            }
+        }
+        return true;
+    }
+}
+
+class minimumLengthRule extends Rule{
+    decide(password = "") {
+        if(password.length >= this.values[0]) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+}
+
+class maximumLengthRule extends Rule{
+    decide(password = "") {
+        if(password.length <= this.values[0]) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+}
+
+class exactLengthRule extends Rule{
+    decide(password = "") {
+        if(password.length == this.values[0]) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+}
+
 class containNumberRule extends Rule {
     decide(password = "") {
         let expression = /\d/;
@@ -153,6 +194,13 @@ class containUpperRule extends Rule {
     }
 }
 
+class containLetterRule extends Rule {
+    decide(password = "") {
+        let expression = /[a-zA-Z]/;
+        return expression.test(password);
+    }
+}
+
 class containSpecialRule extends Rule {
     decide(password = "") {
         // The following characters have special meaning in RegEx.
@@ -169,10 +217,60 @@ class containSpecialRule extends Rule {
             expression += this.values[0][i];
         }
         expression = "[" + expression + "]";
-        console.log(expression);
         expression = new RegExp(expression);
 
         return expression.test(password);
+    }
+}
+
+class containTypesRule extends Rule {
+    decide(password = "") {
+        // Instantiating and relying on the four contain checkers.
+        let checkers = [];
+        checkers.push(new containNumberRule());
+        checkers.push(new containLowerRule());
+        checkers.push(new containUpperRule());
+        checkers.push(new containSpecialRule());
+        checkers[3].values = [this.values[1]]
+
+        let accumulator = 0;
+        for(let i = 0; i < checkers.length; i++) {
+            if(checkers[i].decide(password)) {
+                accumulator++;
+            }
+        }
+
+        if(accumulator >= this.values[0]) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+}
+
+class containBroadTypesRule extends Rule {
+    decide(password = "") {
+        // Instantiating and relying on the three contain checkers.
+        let checkers = [];
+        checkers.push(new containNumberRule());
+        checkers.push(new containLetterRule());
+        checkers.push(new containSpecialRule());
+        checkers[2].values = [this.values[1]]
+
+        let accumulator = 0;
+        for(let i = 0; i < checkers.length; i++) {
+            if(checkers[i].decide(password)) {
+                accumulator++;
+            }
+        }
+
+        if(accumulator >= this.values[0]) {
+            return true;
+        }
+        else {
+            return false;
+        }
     }
 }
 
@@ -184,3 +282,22 @@ class containSpecialRule extends Rule {
 //var rule = new containSpecialRule();
 //rule.values = [["!", "?", "\\"]];
 //console.log(rule.decide("12\\!3"));
+
+// Testing containTypesRule and containBroadTypesRule.
+//var rule = new containTypesRule();
+//rule.values = [4, ["!", "?", "\\", " "]];
+//console.log(rule.decide("12aA 34"));
+//var rule = new containBroadTypesRule();
+//rule.values = [3, ["!", "?", "\\", " ", "^", "$", "%"]];
+//console.log(rule.decide("12a A"))
+
+// Testing allowedCharsRule.
+//var rule = new allowedCharsRule();
+//rule.values = [["4", "a", "!"]];
+//console.log(rule.decide("4 a1"));
+
+// Testing minimumLengthRule, maximumLengthRule, exactLengthRule.
+//var rule = new exactLengthRule();
+//rule.values = [2];
+//console.log(rule.decide("你好"));
+//console.log("你好".length);
