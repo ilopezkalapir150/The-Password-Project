@@ -120,6 +120,27 @@ class Rule {
         return this._modifiedDateTime;
     }
 
+    /**
+     * Validate if this rule is usable with all necessary values included.
+     * @return true (Rule object is valid) / false (not valid).
+     */
+    validate() {
+        if(!(this.id && this.name && this.displayName && 
+            this.createdDateTime && this.modifiedDateTime)) {
+            return false;
+        }
+        if(!(Number.isInteger(this.createdDateTime) && 
+            Number.isInteger(this.modifiedDateTime))) {
+            return false;
+        }
+
+        return this.validateValues();
+    }
+
+    validateValues() {
+        throw new Error("Rule.validateValues: method not implemented.");
+    }
+
     active(password = "") {
         if(!this.active) {
             return false;
@@ -141,6 +162,13 @@ class Rule {
 }
 
 class allowedCharsRule extends Rule {
+    validateValues() {
+        if(!this.values.length == 1) {
+            return false;
+        }
+        return true;
+    }
+
     decide(password = "") {
         for(let i = 0; i < password.length; i++) {
             if(!this.values[0].includes(password[i])) {
@@ -292,10 +320,7 @@ class nondeterministicRule extends Rule {
     }
 }
 
-function parseRule(json) {
-    const required = ["ruleId", "ruleName", "ruleDisplayName", "ruleParent", 
-        "ruleDeterministic", "ruleActive", "ruleActiveRequirements", 
-        "ruleType", "ruleValues", "ruleCreatedDateTime", "ruleModifiedDateTime"]
+function parseRule(jsonString) {
     const ruleType = ["allowedChars", "minimumLength", "maximumLength", 
         "exactLength", "containNumber", "containLower", "containUpper", 
         "containLetter", "containSpecial", "containTypes", "containBroadTypes", 
@@ -304,11 +329,23 @@ function parseRule(json) {
         "bannedEndChar", "noRepeated", "notBadPassword", "noDictWords", 
         "nondeterministicRule"]
     
-    const json = JSON.parse(json);
-    if(!json.required) {
-        throw new Error("Rule.requirements: setter argument not an array.");
+    // Parsing JSON and checking required values in the JSON.
+    const json = JSON.parse(jsonString);
+    if(!(json.ruleId && json.ruleName && ruleDisplayName && ruleParent && 
+        ruleDeterministic && ruleActive && ruleActiveRequirements && 
+        ruleType && ruleValues && ruleCreatedDateTime && 
+        ruleModifiedDateTime)) {
+        throw new Error("parseRule: JSON format incorrect.");
+    }
+    if(!(Number.isInteger(json.ruleCreatedDateTime) && 
+        Number.isInteger(json.ruleModifiedDateTime))) {
+        throw new Error("parseRule: rule date and time format incorrect.");
+    }
+    if(!ruleType.includes(json.ruleType)) {
+        throw new Error("parseRule: rule type not supported.");
     }
     
+    // Initializing rule object.
 }
 
 // Test code. Please delete before deployment.
@@ -338,3 +375,6 @@ function parseRule(json) {
 //rule.values = [2];
 //console.log(rule.decide("你好"));
 //console.log("你好".length);
+
+var test = -1;
+console.log(Boolean(test))
