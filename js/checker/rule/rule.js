@@ -166,6 +166,9 @@ class allowedCharsRule extends Rule {
         if(!this.values.length == 1) {
             return false;
         }
+        if(!Array.isArray(this.values[0])) {
+            return false;
+        }
         return true;
     }
 
