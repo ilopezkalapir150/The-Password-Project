@@ -293,6 +293,21 @@ class nondeterministicRule extends Rule {
 }
 
 function parseRule(json) {
+    const required = ["ruleId", "ruleName", "ruleDisplayName", "ruleParent", 
+        "ruleDeterministic", "ruleActive", "ruleActiveRequirements", 
+        "ruleType", "ruleValues", "ruleCreatedDateTime", "ruleModifiedDateTime"]
+    const ruleType = ["allowedChars", "minimumLength", "maximumLength", 
+        "exactLength", "containNumber", "containLower", "containUpper", 
+        "containLetter", "containSpecial", "containTypes", "containBroadTypes", 
+        "bannedPasswords", "bannedCaseSensitivePasswords", "bannedWords", 
+        "bannedCaseSensitiveWords", "bannedChar", "bannedStartChar", 
+        "bannedEndChar", "noRepeated", "notBadPassword", "noDictWords", 
+        "nondeterministicRule"]
+    
+    const json = JSON.parse(json);
+    if(!json.required) {
+        throw new Error("Rule.requirements: setter argument not an array.");
+    }
     
 }
 
