@@ -1,11 +1,11 @@
 [
     {
         "groupId": 1,
-        "groupName": "Berkeley",
-        "groupDisplayName": "University of California, Berkeley",
+        "groupName": "Columbia",
+        "groupDisplayName": "Columbia University",
         "groupLogo": "",
         "groupActive": true,
-        "groupUrl": "www.berkeley.edu",
+        "groupUrl": "www.columbia.edu",
         "groupCaseSensitive": true,
         "groupRules": [
             {
