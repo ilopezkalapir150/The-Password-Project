@@ -1,23 +1,23 @@
 [
     {
         "groupId": 1,
-        "groupName": "Swarthmore",
-        "groupDisplayName": "Swarthmore College",
+        "groupName": "Brown",
+        "groupDisplayName": "Brown University",
         "groupLogo": "",
         "groupActive": true,
-        "groupUrl": "www.swarthmore.edu",
+        "groupUrl": "www.brown.edu",
         "groupCaseSensitive": true,
         "groupRules": [
             {
                 "ruleId": 0,
                 "ruleName": "rule0",
-                "ruleDisplayName": "Minimum password length 8 characters",
+                "ruleDisplayName": "Minimum password length 10 characters",
                 "ruleParent": 0,
                 "ruleDeterministic": true,
                 "ruleActive": true,
                 "ruleActiveRequirements": [],
                 "ruleType": "minimumLength",
-                "ruleValues": [8],
+                "ruleValues": [10],
                 "ruleCreatedDateTime": 0,
                 "ruleModifiedDateTime": 0
             },
@@ -77,7 +77,20 @@
             {
                 "ruleId": 5,
                 "ruleName": "rule5",
-                "ruleDisplayName": "Password can never be reused",
+                "ruleDisplayName": "Cannot contain name or username",
+                "ruleParent": 0,
+                "ruleDeterministic": false,
+                "ruleActive": true,
+                "ruleActiveRequirements": [],
+                "ruleType": "nondeterministicRule",
+                "ruleValues": [],
+                "ruleCreatedDateTime": 0,
+                "ruleModifiedDateTime": 0
+            },
+            {
+                "ruleId": 6,
+                "ruleName": "rule6",
+                "ruleDisplayName": "Cannot be the same as previous 4 passwords",
                 "ruleParent": 0,
                 "ruleDeterministic": false,
                 "ruleActive": true,
