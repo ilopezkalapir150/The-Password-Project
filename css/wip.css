@@ -196,3 +196,27 @@ tr.selected {
 th,td {
     padding: 8px;
 }
+
+ul {
+    list-style-type: none;
+}
+
+.invalid {
+  color: red;
+}
+
+.invalid:before {
+  position: relative;
+  left: -35px;
+  content: '\2717';
+}
+
+.valid {
+    color: green;
+}
+
+.valid { 
+    position: relative;
+    left: -35px;
+    content: '\2713';
+}

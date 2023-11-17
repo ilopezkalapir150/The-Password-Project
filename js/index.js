@@ -71,6 +71,8 @@ function setRules(btn) {
         for (let i = 0; i < rules.groupRules.length; i++) {
             let p = document.createElement("li");
             p.innerHTML = rules.groupRules[i].ruleDisplayName;
+            //p.setAttribute() set attribute that matches id from specific rule
+            p.classList.add('invalid');
             data.append(p);
         }
         row.appendChild(data);
@@ -119,5 +121,18 @@ function togglePassword(){
         z.style.display = "inline"; 
     }
 }
+
+// function validate(){
+//     //need whatever output from rule checker js
+//     // or sub this code directly into that func
+//     //for loop... item = getelementbyid (id of each li checklist item)
+//     // if (match) {
+//     //     item.classList.remove("invalid");
+//     //     item.classList.add("valid");
+//     // } else {
+//     //     item.classList.remove("valid");
+//     //     item.classList.add("invalid");
+//     // }
+// }
 
 
