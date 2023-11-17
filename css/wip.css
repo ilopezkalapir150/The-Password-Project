@@ -197,8 +197,9 @@ th,td {
     padding: 8px;
 }
 
-ul {
+li {
     list-style-type: none;
+    padding-left: 5px;
 }
 
 .invalid {
@@ -207,7 +208,7 @@ ul {
 
 .invalid:before {
   position: relative;
-  left: -35px;
+  left: -5px;
   content: '\2717';
 }
 
@@ -215,8 +216,8 @@ ul {
     color: green;
 }
 
-.valid { 
+.valid:before { 
     position: relative;
-    left: -35px;
+    left: -5px;
     content: '\2713';
 }
