@@ -1,11 +1,11 @@
 [
     {
         "groupId": 1,
-        "groupName": "Berkeley",
-        "groupDisplayName": "University of California, Berkeley",
+        "groupName": "Stanford",
+        "groupDisplayName": "Stanford University",
         "groupLogo": "",
         "groupActive": true,
-        "groupUrl": "www.berkeley.edu",
+        "groupUrl": "www.stanford.edu",
         "groupCaseSensitive": true,
         "groupRules": [
             {
@@ -122,26 +122,10 @@
                 "ruleCreatedDateTime": 0,
                 "ruleModifiedDateTime": 0
             },
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            
             {
                 "ruleId": 3,
                 "ruleName": "rule3",
-                "ruleDisplayName": "Cannot contain name or CalNet ID",
+                "ruleDisplayName": "Cannot contain current password, previous passwords, SUNet ID, or password reset answer",
                 "ruleParent": 0,
                 "ruleDeterministic": false,
                 "ruleActive": true,
@@ -154,26 +138,13 @@
             {
                 "ruleId": 4,
                 "ruleName": "rule4",
-                "ruleDisplayName": "Cannot contain leading spaces",
+                "ruleDisplayName": "Cannot contain a word in the dictionary",
                 "ruleParent": 0,
                 "ruleDeterministic": true,
                 "ruleActive": true,
                 "ruleActiveRequirements": [],
-                "ruleType": "bannedStartChar",
-                "ruleValues": [1, [" "]],
-                "ruleCreatedDateTime": 0,
-                "ruleModifiedDateTime": 0
-            },
-            {
-                "ruleId": 5,
-                "ruleName": "rule5",
-                "ruleDisplayName": "Cannot contain trailing spaces",
-                "ruleParent": 0,
-                "ruleDeterministic": true,
-                "ruleActive": true,
-                "ruleActiveRequirements": [],
-                "ruleType": "bannedEndChar",
-                "ruleValues": [1, [" "]],
+                "ruleType": "noDictWords",
+                "ruleValues": [5],
                 "ruleCreatedDateTime": 0,
                 "ruleModifiedDateTime": 0
             }

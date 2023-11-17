@@ -1,0 +1,95 @@
+[
+    {
+        "groupId": 1,
+        "groupName": "Berkeley",
+        "groupDisplayName": "University of California, Berkeley",
+        "groupLogo": "",
+        "groupActive": true,
+        "groupUrl": "www.berkeley.edu",
+        "groupCaseSensitive": true,
+        "groupRules": [
+            {
+                "ruleId": 0,
+                "ruleName": "rule0",
+                "ruleDisplayName": "Minimum password length 8 characters",
+                "ruleParent": 0,
+                "ruleDeterministic": true,
+                "ruleActive": true,
+                "ruleActiveRequirements": [],
+                "ruleType": "minimumLength",
+                "ruleValues": [8],
+                "ruleCreatedDateTime": 0,
+                "ruleModifiedDateTime": 0
+            },
+            {
+                "ruleId": 1,
+                "ruleName": "rule1",
+                "ruleDisplayName": "Maximum password length 64 characters",
+                "ruleParent": 0,
+                "ruleDeterministic": true,
+                "ruleActive": true,
+                "ruleActiveRequirements": [],
+                "ruleType": "maximumLength",
+                "ruleValues": [64],
+                "ruleCreatedDateTime": 0,
+                "ruleModifiedDateTime": 0
+            },
+            {
+                "ruleId": 2,
+                "ruleName": "rule2",
+                "ruleDisplayName": "Contains three different character classes",
+                "ruleParent": 0,
+                "ruleDeterministic": true,
+                "ruleActive": true,
+                "ruleActiveRequirements": [],
+                "ruleType": "containTypes",
+                "ruleValues": ["3", ["`","~","!","@","#","$","%","^","&","*","(",")","-","_","=","+","[","{","]",
+                "}","|","\\",";",":","\"","'",",","<",".",">","/","?"]],
+                "ruleCreatedDateTime": 0,
+                "ruleModifiedDateTime": 0
+            },
+            {
+                "ruleId": 3,
+                "ruleName": "rule3",
+                "ruleDisplayName": "Cannot contain name",
+                "ruleParent": 0,
+                "ruleDeterministic": false,
+                "ruleActive": true,
+                "ruleActiveRequirements": [],
+                "ruleType": "nondeterministicRule",
+                "ruleValues": [],
+                "ruleCreatedDateTime": 0,
+                "ruleModifiedDateTime": 0
+            },
+            {
+                "ruleId": 4,
+                "ruleName": "rule4",
+                "ruleDisplayName": "Cannot contain a word in the dictionar if less than 12 characters",
+                "ruleParent": 0,
+                "ruleDeterministic": true,
+                "ruleActive": true,
+                "ruleActiveRequirements": [
+                    {
+                            "ruleId": 4.1,
+                            "ruleName": "rule4.1",
+                            "ruleDisplayName": "Maximum password length 12 characters",
+                            "ruleParent": 0,
+                            "ruleDeterministic": true,
+                            "ruleActive": true,
+                            "ruleActiveRequirements": [],
+                            "ruleType": "maximumLength",
+                            "ruleValues": [12],
+                            "ruleCreatedDateTime": 0,
+                            "ruleModifiedDateTime": 0
+                    }
+                ],
+                "ruleType": "noDictWords",
+                "ruleValues": [5],
+                "ruleCreatedDateTime": 0,
+                "ruleModifiedDateTime": 0
+            }
+        ],
+        "groupCreatedDateTime": 0,
+        "groupModifiedDateTime": 0
+    }
+]

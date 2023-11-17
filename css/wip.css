@@ -188,3 +188,36 @@ tr.selected {
     padding-left: 12px;
     /* font-size: 16px; */
 }
+
+.eye:hover {
+    cursor: pointer;
+}
+
+th,td {
+    padding: 8px;
+}
+
+li {
+    list-style-type: none;
+    padding-left: 5px;
+}
+
+.invalid {
+  color: red;
+}
+
+.invalid:before {
+  position: relative;
+  left: -5px;
+  content: '\2717';
+}
+
+.valid {
+    color: green;
+}
+
+.valid:before { 
+    position: relative;
+    left: -5px;
+    content: '\2713';
+}
