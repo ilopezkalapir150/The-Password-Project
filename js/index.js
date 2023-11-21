@@ -2,7 +2,9 @@
 function loadRules(){
     //get list of buttons inside of rightside button container
     let buttons = document.querySelectorAll("div.button-container button");
-    let rules = rules_swat[0]
+    // let rules = rules_swat[0]
+    let ex = rules_swat_new;
+    var group = parseGroup(ex);
     //loop through dropdown items and update with new rules
     //from json, match groupID to dd-[i]]
     //there must be an easier way to do this...
@@ -11,8 +13,8 @@ function loadRules(){
         let item = document.createElement("li");
         item.setAttribute("id", "dd-rules-"+i);
 
-        for (let i = 0; i < rules.groupRules.length; i++) {
-            item.innerHTML+= "- " + rules.groupRules[i].ruleDisplayName + "<br />";
+        for (let i = 0; i < group.rules.length; i++) {
+            item.innerHTML+= "- " + group.rules[i].displayName + "<br />";
         }
         content.appendChild(item);
     }
@@ -126,6 +128,19 @@ function togglePassword(){
         y.style.display = "none"; 
         z.style.display = "inline"; 
     }
+}
+
+function testingPasswords() {
+    let rules = rules_swat_new;
+    let pswrd = "hithere!"
+    var group = parseGroup(rules);
+    for (let i = 0; i < group.rules.length; i++){
+        console.log(group.rules[i]);
+        console.log(group.rules[i].decide(pswrd));
+    }
+    console.log(group.displayName);
+    // console.log(group.rules);
+    console.log(group.decide("password"));
 }
 
 // function validate(){

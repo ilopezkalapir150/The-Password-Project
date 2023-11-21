@@ -24,6 +24,21 @@
     <script src="js/rules-swat.js"></script>
     <script src="js/index.js"></script>
     <script src="js/common-passwords.js"></script>
+
+    <script src="js/clientside-testing-izzy/rule.js"></script>
+    <script src="js/clientside-testing-izzy/group.js"></script>
+
+
+    <!-- <script type='module' src='./js/checker/rule.mjs'></script>
+    <script type='module' src='./js/checker/group.mjs'></script> -->
+
+    <!-- <script type="module">
+        import * as Rule from './js/checker/rule.mjs'
+    </script>
+    <script type="module">
+        import * as Group from './js/checker/group.mjs'
+    </script> -->
+
     <header>
         <div class="horizontal-color" style="height: 10px; background-color: #4c8fc2;"></div>
         <nav>
@@ -36,6 +51,7 @@
     </header>
     <div class="content-container-grid">
         <div class="column-left">
+            <button style="background: pink;" onclick="testingPasswords()">click to test</button>
             <h1>choose a password</h1>
             <div class="password-rectangle">
                 <table class="table table-striped">
