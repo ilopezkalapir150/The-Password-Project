@@ -1,4 +1,4 @@
-export var groups = [
+var groups = [
     {
         "groupId": "b33808b1-a4d2-4b8e-b6d5-396cd67a3a98",
         "groupName": "Berkeley",

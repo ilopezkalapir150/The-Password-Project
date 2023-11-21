@@ -587,4 +587,4 @@ function parseRule(json) {
     return rule;
 }
 
-export { Rule, parseRule };
+//export { Rule, parseRule };

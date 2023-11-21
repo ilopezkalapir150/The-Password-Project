@@ -36,10 +36,19 @@ jsons.forEach(file => {
 //
 ////////////////////////////////////////////////////////////////////////////////
 
-import { Group, parseGroup } from "./group.mjs";
-import { groups } from "./groups.mjs";
+//import { Group, parseGroup } from "./group.mjs";
+//import { groups } from "./groups.mjs";
 
-for(let i = 0; i < groups.length; i++) {
-    var group = parseGroup(groups[i]);
-    console.log("Successfully Parsed:", group.name);
+function test() {
+    var testGroups = []
+    for(let i = 0; i < groups.length; i++) {
+        var group = parseGroup(groups[i]);
+        testGroups.push(group);
+        //console.log("Successfully Parsed:", group.name);
+    }
+
+    let content = document.getElementById("testText");
+    console.log(testGroups);
+    content.innerHTML = testGroups[0].decide("test");
+
 }

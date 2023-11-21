@@ -3,7 +3,7 @@
  * @class Group
  */
 
-import { Rule, parseRule } from "./rule.mjs";
+//import { Rule, parseRule } from "./rule.mjs";
 
 class Group {
     constructor() {
@@ -150,4 +150,4 @@ function parseGroup(json) {
     return group;
 }
 
-export { Group, parseGroup };
+//export { Group, parseGroup };
