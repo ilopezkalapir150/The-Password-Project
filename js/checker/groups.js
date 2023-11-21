@@ -1,4 +1,4 @@
-export var groups = [
+var groups = [
     {
         "groupId": "b33808b1-a4d2-4b8e-b6d5-396cd67a3a98",
         "groupName": "Berkeley",
@@ -70,7 +70,7 @@ export var groups = [
                 "ruleActive": true,
                 "ruleActiveRequirements": [],
                 "ruleType": "bannedStartChar",
-                "ruleValues": [1, [" "]],
+                "ruleValues": [[" "]],
                 "ruleCreatedDateTime": 1700568000,
                 "ruleModifiedDateTime": 1700568000
             },
@@ -83,7 +83,7 @@ export var groups = [
                 "ruleActive": true,
                 "ruleActiveRequirements": [],
                 "ruleType": "bannedEndChar",
-                "ruleValues": [1, [" "]],
+                "ruleValues": [[" "]],
                 "ruleCreatedDateTime": 1700568000,
                 "ruleModifiedDateTime": 1700568000
             }
