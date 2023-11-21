@@ -1,95 +1,93 @@
-[
-    {
-        "groupId": 1,
-        "groupName": "Columbia",
-        "groupDisplayName": "Columbia University",
-        "groupLogo": "",
-        "groupActive": true,
-        "groupUrl": "www.columbia.edu",
-        "groupCaseSensitive": true,
-        "groupRules": [
-            {
-                "ruleId": 0,
-                "ruleName": "rule0",
-                "ruleDisplayName": "Minimum password length 8 characters",
-                "ruleParent": 0,
-                "ruleDeterministic": true,
-                "ruleActive": true,
-                "ruleActiveRequirements": [],
-                "ruleType": "minimumLength",
-                "ruleValues": [8],
-                "ruleCreatedDateTime": 0,
-                "ruleModifiedDateTime": 0
-            },
-            {
-                "ruleId": 1,
-                "ruleName": "rule1",
-                "ruleDisplayName": "Maximum password length 64 characters",
-                "ruleParent": 0,
-                "ruleDeterministic": true,
-                "ruleActive": true,
-                "ruleActiveRequirements": [],
-                "ruleType": "maximumLength",
-                "ruleValues": [64],
-                "ruleCreatedDateTime": 0,
-                "ruleModifiedDateTime": 0
-            },
-            {
-                "ruleId": 2,
-                "ruleName": "rule2",
-                "ruleDisplayName": "Contains three different character classes",
-                "ruleParent": 0,
-                "ruleDeterministic": true,
-                "ruleActive": true,
-                "ruleActiveRequirements": [],
-                "ruleType": "containTypes",
-                "ruleValues": ["3", ["`","~","!","@","#","$","%","^","&","*","(",")","-","_","=","+","[","{","]",
-                "}","|","\\",";",":","\"","'",",","<",".",">","/","?"]],
-                "ruleCreatedDateTime": 0,
-                "ruleModifiedDateTime": 0
-            },
-            {
-                "ruleId": 3,
-                "ruleName": "rule3",
-                "ruleDisplayName": "Cannot contain name",
-                "ruleParent": 0,
-                "ruleDeterministic": false,
-                "ruleActive": true,
-                "ruleActiveRequirements": [],
-                "ruleType": "nondeterministicRule",
-                "ruleValues": [],
-                "ruleCreatedDateTime": 0,
-                "ruleModifiedDateTime": 0
-            },
-            {
-                "ruleId": 4,
-                "ruleName": "rule4",
-                "ruleDisplayName": "Cannot contain a word in the dictionar if less than 12 characters",
-                "ruleParent": 0,
-                "ruleDeterministic": true,
-                "ruleActive": true,
-                "ruleActiveRequirements": [
-                    {
-                            "ruleId": 4.1,
-                            "ruleName": "rule4.1",
-                            "ruleDisplayName": "Maximum password length 12 characters",
-                            "ruleParent": 0,
-                            "ruleDeterministic": true,
-                            "ruleActive": true,
-                            "ruleActiveRequirements": [],
-                            "ruleType": "maximumLength",
-                            "ruleValues": [12],
-                            "ruleCreatedDateTime": 0,
-                            "ruleModifiedDateTime": 0
-                    }
-                ],
-                "ruleType": "noDictWords",
-                "ruleValues": [5],
-                "ruleCreatedDateTime": 0,
-                "ruleModifiedDateTime": 0
-            }
-        ],
-        "groupCreatedDateTime": 0,
-        "groupModifiedDateTime": 0
-    }
-]
+{
+    "groupId": "b01b6a68-4436-46da-b9c5-0d292508ca83",
+    "groupName": "Columbia",
+    "groupDisplayName": "Columbia University",
+    "groupLogo": "",
+    "groupActive": true,
+    "groupUrl": "https://www.columbia.edu/",
+    "groupRules": [
+        {
+            "ruleId": "ee22d0ea-248f-43d8-90e8-cfdc78028ffe",
+            "ruleName": "rule0",
+            "ruleDisplayName": "Minimum password length 8 characters",
+            "ruleParent": null,
+            "ruleDeterministic": true,
+            "ruleActive": true,
+            "ruleActiveRequirements": [],
+            "ruleType": "minimumLength",
+            "ruleValues": [8],
+            "ruleCreatedDateTime": 1700568000,
+            "ruleModifiedDateTime": 1700568000
+        },
+        {
+            "ruleId": "f9f03916-c9ed-4efa-bbe1-4409d99b3597",
+            "ruleName": "rule1",
+            "ruleDisplayName": "Maximum password length 64 characters",
+            "ruleParent": null,
+            "ruleDeterministic": true,
+            "ruleActive": true,
+            "ruleActiveRequirements": [],
+            "ruleType": "maximumLength",
+            "ruleValues": [64],
+            "ruleCreatedDateTime": 1700568000,
+            "ruleModifiedDateTime": 1700568000
+        },
+        {
+            "ruleId": "156ae2e9-8813-4bff-a6c8-2b62e8e41f0a",
+            "ruleName": "rule2",
+            "ruleDisplayName": "Contains three different character classes",
+            "ruleParent": null,
+            "ruleDeterministic": true,
+            "ruleActive": true,
+            "ruleActiveRequirements": [],
+            "ruleType": "containTypes",
+            "ruleValues": [3, ["`", "~", "!", "@", "#", "$", "%", "^", "&", 
+                "*", "(", ")", "-", "_", "=", "+", "[", "{", "]", "}", "|", 
+                "\\", ";", ":", "\"", "'", ",", "<", ".", ">", "/", "?"]],
+            "ruleCreatedDateTime": 1700568000,
+            "ruleModifiedDateTime": 1700568000
+        },
+        {
+            "ruleId": "45cba224-471f-4e48-9228-543867590c45",
+            "ruleName": "rule3",
+            "ruleDisplayName": "Cannot contain name",
+            "ruleParent": null,
+            "ruleDeterministic": false,
+            "ruleActive": true,
+            "ruleActiveRequirements": [],
+            "ruleType": "nondeterministicRule",
+            "ruleValues": [],
+            "ruleCreatedDateTime": 1700568000,
+            "ruleModifiedDateTime": 1700568000
+        },
+        {
+            "ruleId": "17ce0e21-ccfb-49ca-a524-efc46e27f0cd",
+            "ruleName": "rule4",
+            "ruleDisplayName": "Cannot contain a word in the dictionar if less than 12 characters",
+            "ruleParent": null,
+            "ruleDeterministic": true,
+            "ruleActive": true,
+            "ruleActiveRequirements": [
+                {
+                        "ruleId": "686baa89-3220-4dd5-848b-ad526e4e1f27",
+                        "ruleName": "rule4.1",
+                        "ruleDisplayName": "Maximum password length 12 characters",
+                        "ruleParent": "17ce0e21-ccfb-49ca-a524-efc46e27f0cd",
+                        "ruleDeterministic": true,
+                        "ruleActive": true,
+                        "ruleActiveRequirements": [],
+                        "ruleType": "maximumLength",
+                        "ruleValues": [12],
+                        "ruleCreatedDateTime": 1700568000,
+                        "ruleModifiedDateTime": 1700568000
+                }
+            ],
+            "ruleType": "noDictWords",
+            "ruleValues": [5],
+            "ruleCreatedDateTime": 1700568000,
+            "ruleModifiedDateTime": 1700568000
+        }
+    ],
+    "groupCreatedDateTime": 1700568000,
+    "groupModifiedDateTime": 1700568000
+}

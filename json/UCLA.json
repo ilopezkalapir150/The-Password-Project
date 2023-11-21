@@ -1,42 +1,40 @@
-[
-    {
-        "groupId": 1,
-        "groupName": "UCLA",
-        "groupDisplayName": "University of California Los Angeles",
-        "groupLogo": "",
-        "groupActive": true,
-        "groupUrl": "www.ucla.edu",
-        "groupCaseSensitive": true,
-        "groupRules": [
-            {
-                "ruleId": 0,
-                "ruleName": "rule0",
-                "ruleDisplayName": "Minimum password length 8 characters",
-                "ruleParent": 0,
-                "ruleDeterministic": true,
-                "ruleActive": true,
-                "ruleActiveRequirements": [],
-                "ruleType": "minimumLength",
-                "ruleValues": [8],
-                "ruleCreatedDateTime": 0,
-                "ruleModifiedDateTime": 0
-            },
-            {
-                "ruleId": 1,
-                "ruleName": "rule1",
-                "ruleDisplayName": "Contains two different character classes",
-                "ruleParent": 0,
-                "ruleDeterministic": true,
-                "ruleActive": true,
-                "ruleActiveRequirements": [],
-                "ruleType": "containBroadTypes",
-                "ruleValues": ["2", ["`","~","!","@","#","$","%","^","&","*","(",")","-","_","=","+","[","{","]",
-                "}","|","\\",";",":","\"","'",",","<",".",">","/","?"," "]],
-                "ruleCreatedDateTime": 0,
-                "ruleModifiedDateTime": 0
-            }
-        ],
-        "groupCreatedDateTime": 0,
-        "groupModifiedDateTime": 0
-    }
-]
+{
+    "groupId": "4ecaae4c-a180-4ff7-b663-aa04d10bbc2b",
+    "groupName": "UCLA",
+    "groupDisplayName": "University of California Los Angeles",
+    "groupLogo": "",
+    "groupActive": true,
+    "groupUrl": "https://www.ucla.edu/",
+    "groupRules": [
+        {
+            "ruleId": "5ca7bb22-2331-4061-ad48-61dae1cb6615",
+            "ruleName": "rule0",
+            "ruleDisplayName": "Minimum password length 8 characters",
+            "ruleParent": null,
+            "ruleDeterministic": true,
+            "ruleActive": true,
+            "ruleActiveRequirements": [],
+            "ruleType": "minimumLength",
+            "ruleValues": [8],
+            "ruleCreatedDateTime": 1700568000,
+            "ruleModifiedDateTime": 1700568000
+        },
+        {
+            "ruleId": "409b4a83-e983-45d3-89d1-32bfacbbb927",
+            "ruleName": "rule1",
+            "ruleDisplayName": "Contains two different character classes",
+            "ruleParent": null,
+            "ruleDeterministic": true,
+            "ruleActive": true,
+            "ruleActiveRequirements": [],
+            "ruleType": "containBroadTypes",
+            "ruleValues": [2, ["`", "~", "!", "@", "#", "$", "%", "^", "&", 
+                "*", "(", ")", "-", "_", "=", "+", "[", "{", "]", "}", "|", 
+                "\\", ";", ":", "\"", "'", ",", "<", ".", ">", "/", "?", " "]],
+            "ruleCreatedDateTime": 1700568000,
+            "ruleModifiedDateTime": 1700568000
+        }
+    ],
+    "groupCreatedDateTime": 1700568000,
+    "groupModifiedDateTime": 1700568000
+}

@@ -1,4 +1,9 @@
-import * as Rule from "./rule.js";
+/**
+ * Group class.
+ * @class Group
+ */
+
+import { Rule, parseRule } from "./rule.mjs";
 
 class Group {
     constructor() {
@@ -102,5 +107,47 @@ class Group {
 }
 
 function parseGroup(json) {
-    console.log();
+    // Checking required values in the JSON.
+    if(!(json.hasOwnProperty("groupId") && json.hasOwnProperty("groupName") && 
+        json.hasOwnProperty("groupDisplayName") && 
+        json.hasOwnProperty("groupLogo") && 
+        json.hasOwnProperty("groupActive") && 
+        json.hasOwnProperty("groupUrl") && 
+        json.hasOwnProperty("groupRules") && 
+        json.hasOwnProperty("groupCreatedDateTime") && 
+        json.hasOwnProperty("groupModifiedDateTime"))) {
+        throw new Error("parseGroup: keys missing from JSON.");
+    }
+    if(!(json.groupId && json.groupName && json.groupDisplayName && 
+        json.groupCreatedDateTime && json.groupModifiedDateTime)) {
+        throw new Error("parseGroup: JSON format incorrect.");
+    }
+    if(!(Number.isInteger(json.groupCreatedDateTime) && 
+        Number.isInteger(json.groupModifiedDateTime))) {
+        throw new Error("parseGroup: group date and time format incorrect.");
+    }
+    if(!Array.isArray(json.groupRules)) {
+        throw new Error("parseGroup: group rules not an array.");
+    }
+
+    var group = new Group();
+
+    // Filling in values of the group.
+    group.id = json.groupId;
+    group.name = json.groupName;
+    group.displayName = json.groupDisplayName;
+    group.logo = json.groupLogo;
+    group.active = json.groupActive;
+    group.url = json.groupUrl;
+    group.createdDateTime = json.groupCreatedDateTime;
+    group.modifiedDateTime = json.groupModifiedDateTime;
+
+    // Adding active requirements, if present.
+    for(let i = 0; i < json.groupRules.length; i++) {
+        group._rules.push(parseRule(json.groupRules[i]));
+    }
+
+    return group;
 }
+
+export { Group, parseGroup };

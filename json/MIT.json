@@ -1,68 +1,66 @@
-[
-    {
-        "groupId": 1,
-        "groupName": "MIT",
-        "groupDisplayName": "Massachusetts Institute of Technology",
-        "groupLogo": "",
-        "groupActive": true,
-        "groupUrl": "www.mit.edu",
-        "groupCaseSensitive": true,
-        "groupRules": [
-            {
-                "ruleId": 0,
-                "ruleName": "rule0",
-                "ruleDisplayName": "Minimum password length 8 characters",
-                "ruleParent": 0,
-                "ruleDeterministic": true,
-                "ruleActive": true,
-                "ruleActiveRequirements": [],
-                "ruleType": "minimumLength",
-                "ruleValues": [8],
-                "ruleCreatedDateTime": 0,
-                "ruleModifiedDateTime": 0
-            },
-            {
-                "ruleId": 1,
-                "ruleName": "rule1",
-                "ruleDisplayName": "Contains two different character classes",
-                "ruleParent": 0,
-                "ruleDeterministic": true,
-                "ruleActive": true,
-                "ruleActiveRequirements": [],
-                "ruleType": "containTypes",
-                "ruleValues": ["2", ["`","~","!","@","#","$","%","^","&","*","(",")","-","_","=","+","[","{","]",
-                "}","|","\\",";",":","\"","'",",","<",".",">","/","?"]],
-                "ruleCreatedDateTime": 0,
-                "ruleModifiedDateTime": 0
-            },
-            {
-                "ruleId": 2,
-                "ruleName": "rule2",
-                "ruleDisplayName": "Cannot be the same as current password or based on Kerberos username",
-                "ruleParent": 0,
-                "ruleDeterministic": false,
-                "ruleActive": true,
-                "ruleActiveRequirements": [],
-                "ruleType": "nondeterministicRule",
-                "ruleValues": [],
-                "ruleCreatedDateTime": 0,
-                "ruleModifiedDateTime": 0
-            },
-            {
-                "ruleId": 3,
-                "ruleName": "rule3",
-                "ruleDisplayName": "Cannot contain a word in the dictionary",
-                "ruleParent": 0,
-                "ruleDeterministic": true,
-                "ruleActive": true,
-                "ruleActiveRequirements": [],
-                "ruleType": "noDictWords",
-                "ruleValues": [5],
-                "ruleCreatedDateTime": 0,
-                "ruleModifiedDateTime": 0
-            }
-        ],
-        "groupCreatedDateTime": 0,
-        "groupModifiedDateTime": 0
-    }
-]
+{
+    "groupId": "919b5000-a462-43e6-9464-125fb2af76c4",
+    "groupName": "MIT",
+    "groupDisplayName": "Massachusetts Institute of Technology",
+    "groupLogo": "",
+    "groupActive": true,
+    "groupUrl": "https://www.mit.edu/",
+    "groupRules": [
+        {
+            "ruleId": "9490a8bd-fab2-4b9d-b7d1-67c8132b8c23",
+            "ruleName": "rule0",
+            "ruleDisplayName": "Minimum password length 8 characters",
+            "ruleParent": null,
+            "ruleDeterministic": true,
+            "ruleActive": true,
+            "ruleActiveRequirements": [],
+            "ruleType": "minimumLength",
+            "ruleValues": [8],
+            "ruleCreatedDateTime": 1700568000,
+            "ruleModifiedDateTime": 1700568000
+        },
+        {
+            "ruleId": "cae650ef-dcc0-45d7-8f7e-be2b73b7aa1c",
+            "ruleName": "rule1",
+            "ruleDisplayName": "Contains two different character classes",
+            "ruleParent": null,
+            "ruleDeterministic": true,
+            "ruleActive": true,
+            "ruleActiveRequirements": [],
+            "ruleType": "containTypes",
+            "ruleValues": [2, ["`", "~", "!", "@", "#", "$", "%", "^", "&", 
+                "*", "(", ")", "-", "_", "=", "+", "[", "{", "]", "}", "|", 
+                "\\", ";", ":", "\"", "'", ",", "<", ".", ">", "/", "?"]],
+            "ruleCreatedDateTime": 1700568000,
+            "ruleModifiedDateTime": 1700568000
+        },
+        {
+            "ruleId": "f6a0d8b2-10f5-4788-8be9-d269a72d9628",
+            "ruleName": "rule2",
+            "ruleDisplayName": "Cannot be the same as current password or based on Kerberos username",
+            "ruleParent": null,
+            "ruleDeterministic": false,
+            "ruleActive": true,
+            "ruleActiveRequirements": [],
+            "ruleType": "nondeterministicRule",
+            "ruleValues": [],
+            "ruleCreatedDateTime": 1700568000,
+            "ruleModifiedDateTime": 1700568000
+        },
+        {
+            "ruleId": "242a3139-4a43-489a-acdf-8ab9a2f77cf7",
+            "ruleName": "rule3",
+            "ruleDisplayName": "Cannot contain a word in the dictionary",
+            "ruleParent": null,
+            "ruleDeterministic": true,
+            "ruleActive": true,
+            "ruleActiveRequirements": [],
+            "ruleType": "noDictWords",
+            "ruleValues": [5],
+            "ruleCreatedDateTime": 1700568000,
+            "ruleModifiedDateTime": 1700568000
+        }
+    ],
+    "groupCreatedDateTime": 1700568000,
+    "groupModifiedDateTime": 1700568000
+}

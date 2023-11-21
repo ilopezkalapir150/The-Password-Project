@@ -1,17 +1,16 @@
 {
-    "groupId": 0,
+    "groupId": "",
     "groupName": "",
     "groupDisplayName": "",
     "groupLogo": "",
     "groupActive": true,
     "groupUrl": "",
-    "groupCaseSensitive": true,
     "groupRules": [
         {
             "ruleId": 0,
             "ruleName": "",
             "ruleDisplayName": "",
-            "ruleParent": 0,
+            "ruleParent": null,
             "ruleDeterministic": true,
             "ruleActive": true,
             "ruleActiveRequirements": [],
@@ -22,12 +21,12 @@
             "ruleModifiedDateTime": 0
         }
     ],
-    "groupCreatedDateTime": 0,
-    "groupModifiedDateTime": 0,
+    "groupCreatedDateTime": 1,
+    "groupModifiedDateTime": 2,
 
 
     "comments": [
-        "Ethan Ernst & Roger Wang | Created 2023-10-24 | Updated 2023-10-24", 
+        "Ethan Ernst & Roger Wang | Created 2023-10-24 | Updated 2023-11-21", 
         "Note that this comment variable is not part of the .json design.", 
         "This .json file is a design effort in generalizing rules, so that ", 
         "a single file can contain all information and rules ", 

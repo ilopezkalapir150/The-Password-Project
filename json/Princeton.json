@@ -1,41 +1,38 @@
-[
-    {
-        "groupId": 1,
-        "groupName": "Princeton",
-        "groupDisplayName": "Princeton University",
-        "groupLogo": "",
-        "groupActive": true,
-        "groupUrl": "www.princeton.edu",
-        "groupCaseSensitive": true,
-        "groupRules": [
-            {
-                "ruleId": 0,
-                "ruleName": "rule0",
-                "ruleDisplayName": "Minimum password length 16 characters",
-                "ruleParent": 0,
-                "ruleDeterministic": true,
-                "ruleActive": true,
-                "ruleActiveRequirements": [],
-                "ruleType": "minimumLength",
-                "ruleValues": [16],
-                "ruleCreatedDateTime": 0,
-                "ruleModifiedDateTime": 0
-            },
-            {
-                "ruleId": 1,
-                "ruleName": "rule1",
-                "ruleDisplayName": "Maximum password length 256 characters",
-                "ruleParent": 0,
-                "ruleDeterministic": true,
-                "ruleActive": true,
-                "ruleActiveRequirements": [],
-                "ruleType": "maximumLength",
-                "ruleValues": [256],
-                "ruleCreatedDateTime": 0,
-                "ruleModifiedDateTime": 0
-            }
-        ],
-        "groupCreatedDateTime": 0,
-        "groupModifiedDateTime": 0
-    }
-]
+{
+    "groupId": "601c4f73-0801-4dcf-8f51-9945f2bcab7d",
+    "groupName": "Princeton",
+    "groupDisplayName": "Princeton University",
+    "groupLogo": "",
+    "groupActive": true,
+    "groupUrl": "https://www.princeton.edu/",
+    "groupRules": [
+        {
+            "ruleId": "389fd42e-d52c-4296-aef6-1c3766846ffb",
+            "ruleName": "rule0",
+            "ruleDisplayName": "Minimum password length 16 characters",
+            "ruleParent": null,
+            "ruleDeterministic": true,
+            "ruleActive": true,
+            "ruleActiveRequirements": [],
+            "ruleType": "minimumLength",
+            "ruleValues": [16],
+            "ruleCreatedDateTime": 1700568000,
+            "ruleModifiedDateTime": 1700568000
+        },
+        {
+            "ruleId": "77129220-2ce3-436e-976b-0d481004c948",
+            "ruleName": "rule1",
+            "ruleDisplayName": "Maximum password length 256 characters",
+            "ruleParent": null,
+            "ruleDeterministic": true,
+            "ruleActive": true,
+            "ruleActiveRequirements": [],
+            "ruleType": "maximumLength",
+            "ruleValues": [256],
+            "ruleCreatedDateTime": 1700568000,
+            "ruleModifiedDateTime": 1700568000
+        }
+    ],
+    "groupCreatedDateTime": 1700568000,
+    "groupModifiedDateTime": 1700568000
+}

@@ -1,94 +1,92 @@
-[
-    {
-        "groupId": 1,
-        "groupName": "Berkeley",
-        "groupDisplayName": "University of California, Berkeley",
-        "groupLogo": "",
-        "groupActive": true,
-        "groupUrl": "www.berkeley.edu",
-        "groupCaseSensitive": true,
-        "groupRules": [
-            {
-                "ruleId": 0,
-                "ruleName": "rule0",
-                "ruleDisplayName": "Minimum password length 12 characters",
-                "ruleParent": 0,
-                "ruleDeterministic": true,
-                "ruleActive": true,
-                "ruleActiveRequirements": [],
-                "ruleType": "minimumLength",
-                "ruleValues": [12],
-                "ruleCreatedDateTime": 0,
-                "ruleModifiedDateTime": 0
-            },
-            {
-                "ruleId": 1,
-                "ruleName": "rule1",
-                "ruleDisplayName": "Maximum password length 255 characters",
-                "ruleParent": 0,
-                "ruleDeterministic": true,
-                "ruleActive": true,
-                "ruleActiveRequirements": [],
-                "ruleType": "maximumLength",
-                "ruleValues": [255],
-                "ruleCreatedDateTime": 0,
-                "ruleModifiedDateTime": 0
-            },
-            {
-                "ruleId": 2,
-                "ruleName": "rule2",
-                "ruleDisplayName": "Contains three different character classes",
-                "ruleParent": 0,
-                "ruleDeterministic": true,
-                "ruleActive": true,
-                "ruleActiveRequirements": [],
-                "ruleType": "containTypes",
-                "ruleValues": ["3", ["`","~","!","@","#","$","%","^","&","*","(",")","-","_","=","+","[","{","]",
-                "}","|","\\",";",":","\"","'",",","<",".",">","/","?"]],
-                "ruleCreatedDateTime": 0,
-                "ruleModifiedDateTime": 0
-            },
-            {
-                "ruleId": 3,
-                "ruleName": "rule3",
-                "ruleDisplayName": "Cannot contain name or CalNet ID",
-                "ruleParent": 0,
-                "ruleDeterministic": false,
-                "ruleActive": true,
-                "ruleActiveRequirements": [],
-                "ruleType": "nondeterministicRule",
-                "ruleValues": [],
-                "ruleCreatedDateTime": 0,
-                "ruleModifiedDateTime": 0
-            },
-            {
-                "ruleId": 4,
-                "ruleName": "rule4",
-                "ruleDisplayName": "Cannot contain leading spaces",
-                "ruleParent": 0,
-                "ruleDeterministic": true,
-                "ruleActive": true,
-                "ruleActiveRequirements": [],
-                "ruleType": "bannedStartChar",
-                "ruleValues": [1, [" "]],
-                "ruleCreatedDateTime": 0,
-                "ruleModifiedDateTime": 0
-            },
-            {
-                "ruleId": 5,
-                "ruleName": "rule5",
-                "ruleDisplayName": "Cannot contain trailing spaces",
-                "ruleParent": 0,
-                "ruleDeterministic": true,
-                "ruleActive": true,
-                "ruleActiveRequirements": [],
-                "ruleType": "bannedEndChar",
-                "ruleValues": [1, [" "]],
-                "ruleCreatedDateTime": 0,
-                "ruleModifiedDateTime": 0
-            }
-        ],
-        "groupCreatedDateTime": 0,
-        "groupModifiedDateTime": 0
-    }
-]
+{
+    "groupId": "b33808b1-a4d2-4b8e-b6d5-396cd67a3a98",
+    "groupName": "Berkeley",
+    "groupDisplayName": "University of California, Berkeley",
+    "groupLogo": "",
+    "groupActive": true,
+    "groupUrl": "https://www.berkeley.edu/",
+    "groupRules": [
+        {
+            "ruleId": "3d0ff324-189d-40fd-b769-29bc785b5f22",
+            "ruleName": "rule0",
+            "ruleDisplayName": "Minimum password length 12 characters",
+            "ruleParent": null,
+            "ruleDeterministic": true,
+            "ruleActive": true,
+            "ruleActiveRequirements": [],
+            "ruleType": "minimumLength",
+            "ruleValues": [12],
+            "ruleCreatedDateTime": 1700568000,
+            "ruleModifiedDateTime": 1700568000
+        },
+        {
+            "ruleId": "df71d080-5e01-4dd1-9522-a108d11756d3",
+            "ruleName": "rule1",
+            "ruleDisplayName": "Maximum password length 255 characters",
+            "ruleParent": null,
+            "ruleDeterministic": true,
+            "ruleActive": true,
+            "ruleActiveRequirements": [],
+            "ruleType": "maximumLength",
+            "ruleValues": [255],
+            "ruleCreatedDateTime": 1700568000,
+            "ruleModifiedDateTime": 1700568000
+        },
+        {
+            "ruleId": "6856f21e-c460-46bd-8d25-29816fc752c2",
+            "ruleName": "rule2",
+            "ruleDisplayName": "Contains three different character classes",
+            "ruleParent": null,
+            "ruleDeterministic": true,
+            "ruleActive": true,
+            "ruleActiveRequirements": [],
+            "ruleType": "containTypes",
+            "ruleValues": [3, ["`", "~", "!", "@", "#", "$", "%", "^", "&", 
+                "*", "(", ")", "-", "_", "=", "+", "[", "{", "]", "}", "|", 
+                "\\", ";", ":", "\"", "'", ",", "<", ".", ">", "/", "?"]],
+            "ruleCreatedDateTime": 1700568000,
+            "ruleModifiedDateTime": 1700568000
+        },
+        {
+            "ruleId": "ed57f713-0ac7-462a-8ebd-49cfc98888d9",
+            "ruleName": "rule3",
+            "ruleDisplayName": "Cannot contain name or CalNet ID",
+            "ruleParent": null,
+            "ruleDeterministic": false,
+            "ruleActive": true,
+            "ruleActiveRequirements": [],
+            "ruleType": "nondeterministicRule",
+            "ruleValues": [],
+            "ruleCreatedDateTime": 1700568000,
+            "ruleModifiedDateTime": 1700568000
+        },
+        {
+            "ruleId": "3e77974a-0984-419e-9367-0086204061f3",
+            "ruleName": "rule4",
+            "ruleDisplayName": "Cannot contain leading spaces",
+            "ruleParent": null,
+            "ruleDeterministic": true,
+            "ruleActive": true,
+            "ruleActiveRequirements": [],
+            "ruleType": "bannedStartChar",
+            "ruleValues": [1, [" "]],
+            "ruleCreatedDateTime": 1700568000,
+            "ruleModifiedDateTime": 1700568000
+        },
+        {
+            "ruleId": "1ed78165-7e7d-44f5-872e-af0b88197898",
+            "ruleName": "rule5",
+            "ruleDisplayName": "Cannot contain trailing spaces",
+            "ruleParent": null,
+            "ruleDeterministic": true,
+            "ruleActive": true,
+            "ruleActiveRequirements": [],
+            "ruleType": "bannedEndChar",
+            "ruleValues": [1, [" "]],
+            "ruleCreatedDateTime": 1700568000,
+            "ruleModifiedDateTime": 1700568000
+        }
+    ],
+    "groupCreatedDateTime": 1700568000,
+    "groupModifiedDateTime": 1700568000
+}

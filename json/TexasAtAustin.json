@@ -1,80 +1,77 @@
-[
-    {
-        "groupId": 1,
-        "groupName": "Texas at Austin",
-        "groupDisplayName": "University of Texas at Austin",
-        "groupLogo": "",
-        "groupActive": true,
-        "groupUrl": "www.utexas.edu",
-        "groupCaseSensitive": true,
-        "groupRules": [
-            {
-                "ruleId": 0,
-                "ruleName": "rule0",
-                "ruleDisplayName": "Minimum password length 9 characters",
-                "ruleParent": 0,
-                "ruleDeterministic": true,
-                "ruleActive": true,
-                "ruleActiveRequirements": [],
-                "ruleType": "minimumLength",
-                "ruleValues": [9],
-                "ruleCreatedDateTime": 0,
-                "ruleModifiedDateTime": 0
-            },
-            {
-                "ruleId": 1,
-                "ruleName": "rule1",
-                "ruleDisplayName": "Contains case sensitive letter",
-                "ruleParent": 0,
-                "ruleDeterministic": true,
-                "ruleActive": true,
-                "ruleActiveRequirements": [],
-                "ruleType": "containLetter",
-                "ruleValues": [],
-                "ruleCreatedDateTime": 0,
-                "ruleModifiedDateTime": 0
-            },
-            {
-                "ruleId": 2,
-                "ruleName": "rule2",
-                "ruleDisplayName": "Require one numeric character",
-                "ruleParent": 0,
-                "ruleDeterministic": true,
-                "ruleActive": true,
-                "ruleActiveRequirements": [],
-                "ruleType": "containNumber",
-                "ruleValues": [],
-                "ruleCreatedDateTime": 0,
-                "ruleModifiedDateTime": 0
-            },
-            {
-                "ruleId": 3,
-                "ruleName": "rule3",
-                "ruleDisplayName": "Cannot contain personal information such as name or userid.",
-                "ruleParent": 0,
-                "ruleDeterministic": false,
-                "ruleActive": true,
-                "ruleActiveRequirements": [],
-                "ruleType": "nondeterministicRule",
-                "ruleValues": [],
-                "ruleCreatedDateTime": 0,
-                "ruleModifiedDateTime": 0
-            },
-            {
-                "ruleId": 4,
-                "ruleName": "rule4",
-                "ruleDisplayName": "Cannot contain a word in the dictionary",
-                "ruleParent": 0,
-                "ruleDeterministic": true,
-                "ruleActive": true,
-                "ruleActiveRequirements": [],
-                "ruleType": "noDictWords",
-                "ruleValues": [5],
-                "ruleCreatedDateTime": 0,
-                "ruleModifiedDateTime": 0
-            }
-        ],
-        "groupCreatedDateTime": 0,
-        "groupModifiedDateTime": 0
-    }
-]
+{
+    "groupId": "494384e8-ccf1-4b6f-80de-aca415feca8d",
+    "groupName": "Texas at Austin",
+    "groupDisplayName": "University of Texas at Austin",
+    "groupLogo": "",
+    "groupActive": true,
+    "groupUrl": "https://www.utexas.edu/",
+    "groupRules": [
+        {
+            "ruleId": "c76d06e5-725e-474f-9bbf-365ccbadc741",
+            "ruleName": "rule0",
+            "ruleDisplayName": "Minimum password length 9 characters",
+            "ruleParent": null,
+            "ruleDeterministic": true,
+            "ruleActive": true,
+            "ruleActiveRequirements": [],
+            "ruleType": "minimumLength",
+            "ruleValues": [9],
+            "ruleCreatedDateTime": 1700568000,
+            "ruleModifiedDateTime": 1700568000
+        },
+        {
+            "ruleId": "47b3406c-75ce-4764-9941-2b692119a2eb",
+            "ruleName": "rule1",
+            "ruleDisplayName": "Contains case sensitive letter",
+            "ruleParent": null,
+            "ruleDeterministic": true,
+            "ruleActive": true,
+            "ruleActiveRequirements": [],
+            "ruleType": "containLetter",
+            "ruleValues": [],
+            "ruleCreatedDateTime": 1700568000,
+            "ruleModifiedDateTime": 1700568000
+        },
+        {
+            "ruleId": "fcbda109-33ed-4b78-9671-8f7ed722a126",
+            "ruleName": "rule2",
+            "ruleDisplayName": "Require one numeric character",
+            "ruleParent": null,
+            "ruleDeterministic": true,
+            "ruleActive": true,
+            "ruleActiveRequirements": [],
+            "ruleType": "containNumber",
+            "ruleValues": [],
+            "ruleCreatedDateTime": 1700568000,
+            "ruleModifiedDateTime": 1700568000
+        },
+        {
+            "ruleId": "109c8f61-d1ad-458b-915a-418dbb09cf89",
+            "ruleName": "rule3",
+            "ruleDisplayName": "Cannot contain personal information such as name or userid.",
+            "ruleParent": null,
+            "ruleDeterministic": false,
+            "ruleActive": true,
+            "ruleActiveRequirements": [],
+            "ruleType": "nondeterministicRule",
+            "ruleValues": [],
+            "ruleCreatedDateTime": 1700568000,
+            "ruleModifiedDateTime": 1700568000
+        },
+        {
+            "ruleId": "772327d0-40a2-4547-899d-cd5efaf94a96",
+            "ruleName": "rule4",
+            "ruleDisplayName": "Cannot contain a word in the dictionary",
+            "ruleParent": null,
+            "ruleDeterministic": true,
+            "ruleActive": true,
+            "ruleActiveRequirements": [],
+            "ruleType": "noDictWords",
+            "ruleValues": [5],
+            "ruleCreatedDateTime": 1700568000,
+            "ruleModifiedDateTime": 1700568000
+        }
+    ],
+    "groupCreatedDateTime": 1700568000,
+    "groupModifiedDateTime": 1700568000
+}
