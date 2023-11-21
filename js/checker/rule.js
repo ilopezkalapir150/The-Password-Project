@@ -452,6 +452,27 @@ class nondeterministicRule extends Rule {
     }
 }
 
+
+
+
+class noRepeated extends Rule {
+    validateValues() {
+        if (!Array.isArray(this.values)) {
+            return false;
+        }
+        if (!this.values.length == 1) {
+            return false;
+        }
+        if (!Number.isInteger(this.values[0])) {
+            return false;
+        }
+        return true;
+    }
+    decide(password = "") {
+        
+    }
+}
+
 // This function takes a parsed json object.
 function parseRule(json) {
     // Checking required values in the JSON.
