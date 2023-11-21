@@ -1,24 +1,6 @@
-function myFunc() {
-    alert("You clicked it!");
-}
-
 //on the website loading up, load json rules and display in button dropdowns 
 function loadRules(){
     //get list of buttons inside of rightside button container
-    //still trying to figure out reading json file
-    //the code below kind of works when running a local server w vscode extension
-
-    // var xhttp = new XMLHttpRequest();
-    // xhttp.onreadystatechange = function () {
-    //     if (this.readyState == 4 && this.status == 200) {
-    //         // Do something here with this.responseText
-    //         console.log(JSON.parse(JSON.stringify(this)));
-    //     }
-    // };
-    // xhttp.open("GET", "json/swat-sample.json", true);
-    // xhttp.send();
-    // console.log("Request Sent");
-
     let buttons = document.querySelectorAll("div.button-container button");
     let rules = rules_swat[0]
     //loop through dropdown items and update with new rules
@@ -33,6 +15,31 @@ function loadRules(){
             item.innerHTML+= "- " + rules.groupRules[i].ruleDisplayName + "<br />";
         }
         content.appendChild(item);
+    }
+
+
+    //load in passwords to page 2 table 
+    let p = passwords;
+    let table = document.getElementById("page2-table");
+
+    for (let i = 0; i < 200; i++) {
+        let item = document.createElement("tr");
+        item.setAttribute("id", "p-" + (i + 1));
+        item.addEventListener("click", function () {
+            selectPassword(this)});
+
+        let row1 = document.createElement("td");
+        row1.innerText = p[0].rank[i];
+        let row2 = document.createElement("td");
+        row2.innerText = p[0].password[i];
+        let row3 = document.createElement("td");
+        row3.innerText = p[0].users[i];
+
+        item.appendChild(row1);
+        item.appendChild(row2);
+        item.appendChild(row3);
+        table.appendChild(item);
+
     }
     //console.log(rules.groupName);
     //console.log(rules.groupRules.length);
@@ -95,8 +102,7 @@ function setRules(btn) {
 
 //highlights password on page 2 in "select password" table
 function selectPassword(row){
-    console.log("password selected");
-
+    // console.log("password selected");
     const previousSelection = document.querySelector('tr.selected');
     if (previousSelection) {
         previousSelection.classList.remove('selected');
