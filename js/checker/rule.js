@@ -434,6 +434,85 @@ class containBroadTypesRule extends Rule {
     }
 }
 
+class bannedChar extends Rule {
+    validateValues() {
+        if(!Array.isArray(this.values)) {
+            return false;
+        }
+        if(!this.values.length == 1) {
+            return false;
+        }
+        if(!Array.isArray(this.values[0])) {
+            return false;
+        }
+        return true;
+    }
+
+    decide(password = "") {
+        // The following characters have special meaning in RegEx.
+        // Therefore, they need to be prepended by "\" before added.
+        let reserved = ["+", "*", "?", "^", "$", "\\", ".", "[", "]", "{", 
+                        "}", "(", ")", "|", "/"];
+        
+        // Building the RegEx expression.
+        let expression = "";
+        for(let i = 0; i < this.values[0].length; i++) {
+            if(reserved.includes(this.values[0][i])) {
+                expression += "\\";
+            }
+            expression += this.values[0][i];
+        }
+        expression = "[" + expression + "]";
+        expression = new RegExp(expression);
+
+        return !expression.test(password);
+    }
+}
+
+class bannedStartChar extends Rule {
+    validateValues() {
+        if(!Array.isArray(this.values)) {
+            return false;
+        }
+        if(!this.values.length == 1) {
+            return false;
+        }
+        if(!Array.isArray(this.values[0])) {
+            return false;
+        }
+        return true;
+    }
+
+    decide(password = "") {
+        if(this.values[0].includes(password[0])) {
+            return false;
+        }
+        return true;
+    }
+}
+
+class bannedEndChar extends Rule {
+    validateValues() {
+        if(!Array.isArray(this.values)) {
+            return false;
+        }
+        if(!this.values.length == 1) {
+            return false;
+        }
+        if(!Array.isArray(this.values[0])) {
+            return false;
+        }
+        return true;
+    }
+
+    decide(password = "") {
+        if(this.values[0].includes(password[password.length - 1])) {
+            return false;
+        }
+        return true;
+    }
+}
+
 class nondeterministicRule extends Rule {
     set active(active) {
         this._active = false;
@@ -534,16 +613,13 @@ function parseRule(json) {
             var rule = new nondeterministicRule();
             break;
         case "bannedChar":
-            //////////////////////////////////////////////////////////////////// NOT IMPLEMENTED YET!
-            var rule = new nondeterministicRule();
+            var rule = new bannedChar();
             break;
         case "bannedStartChar":
-            //////////////////////////////////////////////////////////////////// NOT IMPLEMENTED YET!
-            var rule = new nondeterministicRule();
+            var rule = new bannedStartChar();
             break;
         case "bannedEndChar":
-            //////////////////////////////////////////////////////////////////// NOT IMPLEMENTED YET!
-            var rule = new nondeterministicRule();
+            var rule = new bannedEndChar();
             break;
         case "noRepeated":
             //////////////////////////////////////////////////////////////////// NOT IMPLEMENTED YET!
@@ -581,6 +657,7 @@ function parseRule(json) {
     }
 
     if(!rule.validate()) {
+        console.log(rule.id);
         throw new Error("parseRule: rule values have incorrect format.");
     }
 

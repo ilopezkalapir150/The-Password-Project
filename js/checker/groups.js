@@ -70,7 +70,7 @@ var groups = [
                 "ruleActive": true,
                 "ruleActiveRequirements": [],
                 "ruleType": "bannedStartChar",
-                "ruleValues": [1, [" "]],
+                "ruleValues": [[" "]],
                 "ruleCreatedDateTime": 1700568000,
                 "ruleModifiedDateTime": 1700568000
             },
@@ -83,7 +83,7 @@ var groups = [
                 "ruleActive": true,
                 "ruleActiveRequirements": [],
                 "ruleType": "bannedEndChar",
-                "ruleValues": [1, [" "]],
+                "ruleValues": [[" "]],
                 "ruleCreatedDateTime": 1700568000,
                 "ruleModifiedDateTime": 1700568000
             }
