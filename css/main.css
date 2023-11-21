@@ -213,7 +213,7 @@ li {
 }
 
 .valid {
-    color: green;
+    color: limegreen;
 }
 
 .valid:before { 

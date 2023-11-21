@@ -79,6 +79,7 @@ function setRules(btn) {
         data.innerHTML = rule_school.innerText;
         for (let i = 0; i < rules.groupRules.length; i++) {
             let p = document.createElement("li");
+            p.setAttribute("id","p-rule-" + n + "-" + i);
             p.innerHTML = rules.groupRules[i].ruleDisplayName;
             //p.setAttribute() set attribute that matches id from specific rule
             p.classList.add('invalid');
@@ -131,16 +132,38 @@ function togglePassword(){
 }
 
 function testingPasswords() {
+    //need to add event listener, any time a password is entered
+    //and changed (page 1) or a new password is selected (page 2)
     let rules = rules_swat_new;
-    let pswrd = "hithere!"
+    let pswrd = "hithere!" //just hard coded in for now
+    
     var group = parseGroup(rules);
     for (let i = 0; i < group.rules.length; i++){
-        console.log(group.rules[i]);
-        console.log(group.rules[i].decide(pswrd));
+        // console.log(group.rules[i]);
+        // console.log(group.rules[i].decide(pswrd));
     }
     console.log(group.displayName);
     // console.log(group.rules);
-    console.log(group.decide("password"));
+    // console.log(group.decide("password"));
+
+    let array = document.querySelectorAll('.btn-selected');
+    for (let i = 0; i < array.length; i++){
+        // let school = array[i];
+        let n = array[i].id.slice(-1);
+        for (let j = 0; j < group.rules.length; j++) {
+            let p = document.getElementById("p-rule-" + n + "-" + j);
+            let pass = group.rules[j].decide(pswrd);
+            // console.log(p.classList);
+            // console.log(p);
+            if (pass == true){
+                p.classList.remove('invalid');
+                p.classList.add('valid');
+            } else {
+                p.classList.remove('valid');
+                p.classList.add('invalid');
+            }
+        }
+    }
 }
 
 // function validate(){
