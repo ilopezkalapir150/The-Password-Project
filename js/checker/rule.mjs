@@ -478,7 +478,8 @@ function parseRule(json) {
     }
     if(!(Array.isArray(json.ruleActiveRequirements) && 
         Array.isArray(json.ruleValues))) {
-        throw new Error("parseRule: rule requirements and/or values are not an array.");
+        throw new Error(
+            "parseRule: rule requirements and/or values are not an array.");
     }
     
     // Initializing rule object.
