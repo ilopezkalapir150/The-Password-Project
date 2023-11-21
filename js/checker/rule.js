@@ -513,6 +513,30 @@ class bannedEndChar extends Rule {
     }
 }
 
+class noRepeated extends Rule {
+    validateValues() {
+        if(!Array.isArray(this.values)) {
+            return false;
+        }
+        if(!this.values.length == 1) {
+            return false;
+        }
+        if(!Number.isInteger(this.values[0])) {
+            return false;
+        }
+        return true;
+    }
+    decide(password = "") {
+        // Expression building.
+        let expression = "(.)\\1{";
+        expression += String(this.values[0]);
+        expression += ",}"
+
+        expression = new RegExp(expression);
+        return !expression.test(password);
+    }
+}
+
 class nondeterministicRule extends Rule {
     set active(active) {
         this._active = false;
@@ -528,27 +552,6 @@ class nondeterministicRule extends Rule {
 
     decide(password = "") {
         return true;
-    }
-}
-
-
-
-
-class noRepeated extends Rule {
-    validateValues() {
-        if (!Array.isArray(this.values)) {
-            return false;
-        }
-        if (!this.values.length == 1) {
-            return false;
-        }
-        if (!Number.isInteger(this.values[0])) {
-            return false;
-        }
-        return true;
-    }
-    decide(password = "") {
-        
     }
 }
 
@@ -643,8 +646,7 @@ function parseRule(json) {
             var rule = new bannedEndChar();
             break;
         case "noRepeated":
-            //////////////////////////////////////////////////////////////////// NOT IMPLEMENTED YET!
-            var rule = new nondeterministicRule();
+            var rule = new noRepeated();
             break;
         case "notBadPassword":
             //////////////////////////////////////////////////////////////////// NOT IMPLEMENTED YET!
