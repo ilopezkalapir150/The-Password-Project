@@ -3,13 +3,15 @@ function loadRules(){
     //get list of buttons inside of rightside button container
     let buttons = document.querySelectorAll("div.button-container button");
     // let rules = rules_swat[0]
-    let ex = rules_swat_new;
-    var group = parseGroup(ex);
+    let data = rules_new;
     //loop through dropdown items and update with new rules
     //from json, match groupID to dd-[i]]
     //there must be an easier way to do this...
     for (let i = 0; i < buttons.length; i++ ){
-        let content = document.getElementById("dd-"+i);
+        let content = document.getElementById(rules_new[i].groupId).parentElement;
+        // let content_id = document.getElementById(rules_new[i].groupName).parentElement.id;
+        // let content = document.getElementById(content_id);
+        let group = parseGroup(data[i]);
         let item = document.createElement("li");
         item.setAttribute("id", "dd-rules-"+i);
 
