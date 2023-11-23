@@ -2,15 +2,13 @@
 function loadRules(){
     //get list of buttons inside of rightside button container
     let buttons = document.querySelectorAll("div.button-container button");
-    // let rules = rules_swat[0]
     let data = rules_new;
     //loop through dropdown items and update with new rules
     //from json, match groupID to dd-[i]]
     //there must be an easier way to do this...
     for (let i = 0; i < buttons.length; i++ ){
+        console.log(rules_new[i].groupId);
         let content = document.getElementById(rules_new[i].groupId).parentElement;
-        // let content_id = document.getElementById(rules_new[i].groupName).parentElement.id;
-        // let content = document.getElementById(content_id);
         let group = parseGroup(data[i]);
         let item = document.createElement("li");
         item.setAttribute("id", "dd-rules-"+i);
@@ -24,6 +22,7 @@ function loadRules(){
 
     //load in passwords to page 2 table 
     let p = passwords;
+    console.log(p);
     let table = document.getElementById("page2-table");
 
     for (let i = 0; i < 200; i++) {
@@ -45,27 +44,19 @@ function loadRules(){
         table.appendChild(item);
 
     }
-    //console.log(rules.groupName);
-    //console.log(rules.groupRules.length);
-
 }
 
 //when school button clicked, load rules wherever they need to go to be applied to password
 //this may include checklist display (bottom of page), perhaps to an exterior password checker func?
 function setRules(btn) {
-    //console.log(btn.id.slice(-1)); //this returns the number after logo-button-<NUM>
-    n = btn.id.slice(-1);
-    rule_box = document.querySelector("#dd-rules-" + n);
-    rule_school = document.querySelector("#name-" + n);
-    // const response = await fetch("../json/swat-sample.json");
-    // const data = await response.json();
-    // const obj = JSON.parse(data);
-
     let table = document.getElementById("school-list");
+    let current_id = btn.children[1].children[0].id;
+    let n = btn.id.slice(-1);
+    let rule_box = document.querySelector("#dd-rules-" + n);
 
-    //ultimately do a for loop thru each rule in rules.js
-    let rules = rules_swat[0]; //replace 0 with n
-    
+    let group = getCurrentRules(rules_new, current_id);
+    //console.log(btn.id.slice(-1)); //this returns the number after logo-button-<NUM>
+
 
     //button selection toggle and add/remove rules in table
     if (btn.classList.contains('btn-selected')) {
@@ -77,13 +68,13 @@ function setRules(btn) {
         let row = document.createElement('tr');
         row.setAttribute("id", "school-item-" + n);
         let data = document.createElement('td');
-        //data.innerHTML = rules.groupDisplayName;
-        data.innerHTML = rule_school.innerText;
-        for (let i = 0; i < rules.groupRules.length; i++) {
+        data.innerHTML = group.displayName;
+        for (let i = 0; i < group.rules.length; i++) {
             let p = document.createElement("li");
-            p.setAttribute("id","p-rule-" + n + "-" + i);
-            p.innerHTML = rules.groupRules[i].ruleDisplayName;
-            //p.setAttribute() set attribute that matches id from specific rule
+            // console.log("p-rule-" + n + "-" + i); //come back
+            p.setAttribute("id", "p-rule-" + n + "-" + i);
+            p.innerHTML = group.rules[i].displayName;
+            // p.setAttribute("id", current_rules.groupRules[i].ruleId);
             p.classList.add('invalid');
             data.append(p);
         }
@@ -92,10 +83,9 @@ function setRules(btn) {
     }
 
     //handle placeholder text
-    // console.log(table);
     if (document.getElementById('table-placeholder')) {
         document.getElementById('table-placeholder').remove()
-    } else if (table.childNodes.length == 2) { //2 bcause of tr and tr 
+    } else if (table.childNodes.length == 2) { //2 bcause of exterior tr and tr 
         let row = document.createElement('tr');
         let plcholder = document.createElement('td');
         row.setAttribute("id", "table-placeholder");
@@ -105,17 +95,17 @@ function setRules(btn) {
     }
 }
 
+
 //highlights password on page 2 in "select password" table
 function selectPassword(row){
-    // console.log("password selected");
     const previousSelection = document.querySelector('tr.selected');
     if (previousSelection) {
         previousSelection.classList.remove('selected');
     }
     row.classList.add('selected');
     console.log(row.children[1].innerText); //this is the password we will be checking
-
 }
+
 
 //page 1: toggle btw show/hide entered password
 function togglePassword(){
@@ -133,33 +123,38 @@ function togglePassword(){
     }
 }
 
+//Given a list of rules and a school id to match,
+//Returns the parsed set of rules for that particular school 
+function getCurrentRules(rules, id) {
+    for (let i = 0; i < rules.length; i++) {
+        if (rules[i].groupId == id) {
+            current_rules = rules[i];
+        }
+    }
+    return parseGroup(current_rules);
+}
+
+
 function testingPasswords() {
     //need to add event listener, any time a password is entered
     //and changed (page 1) or a new password is selected (page 2)
-    let rules = rules_swat_new;
     let pswrd = "hithere!" //just hard coded in for now
-    
-    var group = parseGroup(rules);
-    for (let i = 0; i < group.rules.length; i++){
-        // console.log(group.rules[i]);
-        // console.log(group.rules[i].decide(pswrd));
-    }
-    console.log(group.displayName);
-    // console.log(group.rules);
-    // console.log(group.decide("password"));
 
     let array = document.querySelectorAll('.btn-selected');
+    let current_id = "";
+    console.log(array);
     for (let i = 0; i < array.length; i++){
-        // let school = array[i];
+        current_id = array[i].children[1].children[0].id;
+        console.log(typeof rules_new); 
+        let group = getCurrentRules(rules_new, current_id);
         let n = array[i].id.slice(-1);
         for (let j = 0; j < group.rules.length; j++) {
             let p = document.getElementById("p-rule-" + n + "-" + j);
-            let pass = group.rules[j].decide(pswrd);
-            // console.log(p.classList);
-            // console.log(p);
-            if (pass == true){
+            let decision = group.rules[j].decide(pswrd);
+            if (decision == true){
                 p.classList.remove('invalid');
                 p.classList.add('valid');
+                console.log("cleared rule "+n+ "-"+j+"!");
             } else {
                 p.classList.remove('valid');
                 p.classList.add('invalid');
@@ -167,18 +162,5 @@ function testingPasswords() {
         }
     }
 }
-
-// function validate(){
-//     //need whatever output from rule checker js
-//     // or sub this code directly into that func
-//     //for loop... item = getelementbyid (id of each li checklist item)
-//     // if (match) {
-//     //     item.classList.remove("invalid");
-//     //     item.classList.add("valid");
-//     // } else {
-//     //     item.classList.remove("valid");
-//     //     item.classList.add("invalid");
-//     // }
-// }
 
 
