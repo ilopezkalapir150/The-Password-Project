@@ -1,6 +1,14 @@
+function sendPasswordOnClick(){
+    var passwordInput = document.getElementById("password-input");
+    console.log(passwordInput); 
+    testingPasswords(passwordInput); 
+    
+}
+
 function testingPasswords(password) {
     //need to add event listener, any time a password is entered
     //and changed (page 1) or a new password is selected (page 2)
+    console.log("hello"); 
     let pswrd = password.target.value;
     // const passwordInput = document.getElementById('password-input');
     //passwordInput.addEventListener('input', testingPasswords(passwordInput.value));
@@ -34,6 +42,7 @@ function loadInput(){
     console.log("loaded text input");
     var passwordInput = document.getElementById("password-input");
     passwordInput.addEventListener("input", testingPasswords);
+    console.log(passwordInput); 
 }
 
 //on the website loading up, load json rules and display in button dropdowns 
