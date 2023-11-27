@@ -5,6 +5,24 @@ function sendPasswordOnClick(){
     
 }
 
+//highlights password on page 2 in "select password" table
+function selectPassword(row){
+    const previousSelection = document.querySelector('tr.selected');
+    if (previousSelection) {
+        previousSelection.classList.remove('selected');
+    }
+    row.classList.add('selected');
+    var page2password = row.children[1].innerText; //this is the password we will be checking
+    testingPasswords(page2password);
+}
+
+function sendPasswordOnClickP2(){
+    let page2password = document.querySelectorAll(".selected"); 
+    console.log(page2password); 
+    console.log(page2password[0].children[1]); 
+    testingPasswords(page2password[0].children[1].innerText);
+} 
+
 function sendPasswordOnInput(password){
     let pswrd = password.target.value;
     testingPasswords(pswrd);
@@ -147,18 +165,6 @@ function setRules(btn) {
         row.appendChild(plcholder);
         table.appendChild(row);
     }
-}
-
-
-//highlights password on page 2 in "select password" table
-function selectPassword(row){
-    const previousSelection = document.querySelector('tr.selected');
-    if (previousSelection) {
-        previousSelection.classList.remove('selected');
-    }
-    row.classList.add('selected');
-    console.log(row.children[1].innerText); //this is the password we will be checking
-    //togglePassword(row.children[1].innerText);
 }
 
 
