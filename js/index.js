@@ -1,15 +1,20 @@
 function sendPasswordOnClick(){
     var passwordInput = document.getElementById("password-input");
     console.log(passwordInput); 
-    testingPasswords(passwordInput); 
+    testingPasswords(passwordInput.value); 
     
 }
 
-function testingPasswords(password) {
+function sendPasswordOnInput(password){
+    let pswrd = password.target.value;
+    testingPasswords(pswrd);
+}
+
+function testingPasswords(pswrd) {
     //need to add event listener, any time a password is entered
     //and changed (page 1) or a new password is selected (page 2)
-    console.log("hello"); 
-    let pswrd = password.target.value;
+    //console.log("hello"); 
+    
     // const passwordInput = document.getElementById('password-input');
     //passwordInput.addEventListener('input', testingPasswords(passwordInput.value));
     
@@ -41,7 +46,7 @@ function loadInput(){
     //load get live password input 
     console.log("loaded text input");
     var passwordInput = document.getElementById("password-input");
-    passwordInput.addEventListener("input", testingPasswords);
+    passwordInput.addEventListener("input", sendPasswordOnInput);
     console.log(passwordInput); 
 }
 
@@ -153,7 +158,7 @@ function selectPassword(row){
     }
     row.classList.add('selected');
     console.log(row.children[1].innerText); //this is the password we will be checking
-    //togglePassword(row.children[1].innerText);
+    togglePassword(row.children[1].innerText);
 }
 
 
