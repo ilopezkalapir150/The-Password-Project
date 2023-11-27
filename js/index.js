@@ -1,8 +1,11 @@
-function testingPasswords(pswrd) {
+function testingPasswords(password) {
     //need to add event listener, any time a password is entered
     //and changed (page 1) or a new password is selected (page 2)
-   //let pswrd = "hithere!" //just hard coded in for now
-   console.log("call to this function")
+    let pswrd = password.target.value;
+    // const passwordInput = document.getElementById('password-input');
+    //passwordInput.addEventListener('input', testingPasswords(passwordInput.value));
+    
+    //console.log(passwordInput.value);
     let array = document.querySelectorAll('.btn-selected');
     let current_id = "";
     console.log(array);
@@ -26,11 +29,17 @@ function testingPasswords(pswrd) {
     }
 }
 
+function loadInput(){
+    //load get live password input 
+    console.log("loaded text input");
+    var passwordInput = document.getElementById("password-input");
+    passwordInput.addEventListener("input", testingPasswords);
+}
+
 //on the website loading up, load json rules and display in button dropdowns 
 function loadRules(){
-    //get live password input 
-    const passwordInput = document.getElementById('password-input');
-    passwordInput.addEventListener('input', testingPasswords(passwordInput.value));
+    loadInput();
+    // passwordInput.addEventListener('input', testingPasswords(passwordInput.value));
     //get list of buttons inside of rightside button container
     let buttons = document.querySelectorAll("div.button-container button");
     let data = rules_new;
@@ -135,6 +144,7 @@ function selectPassword(row){
     }
     row.classList.add('selected');
     console.log(row.children[1].innerText); //this is the password we will be checking
+    //togglePassword(row.children[1].innerText);
 }
 
 
