@@ -52,7 +52,7 @@ function loadInput(){
 
 //on the website loading up, load json rules and display in button dropdowns 
 function loadRules(){
-    loadInput();
+    //loadInput();
     // passwordInput.addEventListener('input', testingPasswords(passwordInput.value));
     //get list of buttons inside of rightside button container
     let buttons = document.querySelectorAll("div.button-container button");
@@ -158,7 +158,7 @@ function selectPassword(row){
     }
     row.classList.add('selected');
     console.log(row.children[1].innerText); //this is the password we will be checking
-    togglePassword(row.children[1].innerText);
+    //togglePassword(row.children[1].innerText);
 }
 
 
