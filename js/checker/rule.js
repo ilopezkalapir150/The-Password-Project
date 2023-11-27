@@ -340,7 +340,7 @@ class containSpecialRule extends Rule {
         // The following characters have special meaning in RegEx.
         // Therefore, they need to be prepended by "\" before added.
         let reserved = ["+", "*", "?", "^", "$", "\\", ".", "[", "]", "{", 
-                        "}", "(", ")", "|", "/"];
+                        "}", "(", ")", "|", "/", "-"];
         
         // Building the RegEx expression.
         let expression = "";
@@ -452,7 +452,7 @@ class bannedChar extends Rule {
         // The following characters have special meaning in RegEx.
         // Therefore, they need to be prepended by "\" before added.
         let reserved = ["+", "*", "?", "^", "$", "\\", ".", "[", "]", "{", 
-                        "}", "(", ")", "|", "/"];
+                        "}", "(", ")", "|", "/", "-"];
         
         // Building the RegEx expression.
         let expression = "";
