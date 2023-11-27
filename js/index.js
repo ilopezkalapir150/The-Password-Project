@@ -79,7 +79,7 @@ function loadRules(){
     //from json, match groupID to dd-[i]]
     //there must be an easier way to do this...
     for (let i = 0; i < buttons.length; i++ ){
-        console.log(rules_new[i].groupId);
+        //console.log(rules_new[i].groupId);
         let content = document.getElementById(rules_new[i].groupId).parentElement;
         let group = parseGroup(data[i]);
         let item = document.createElement("li");
