@@ -1,5 +1,36 @@
+function testingPasswords(pswrd) {
+    //need to add event listener, any time a password is entered
+    //and changed (page 1) or a new password is selected (page 2)
+   //let pswrd = "hithere!" //just hard coded in for now
+   console.log("call to this function")
+    let array = document.querySelectorAll('.btn-selected');
+    let current_id = "";
+    console.log(array);
+    for (let i = 0; i < array.length; i++){
+        current_id = array[i].children[1].children[0].id;
+        console.log(typeof rules_new); 
+        let group = getCurrentRules(rules_new, current_id);
+        let n = array[i].id.slice(-1);
+        for (let j = 0; j < group.rules.length; j++) {
+            let p = document.getElementById("p-rule-" + n + "-" + j);
+            let decision = group.rules[j].decide(pswrd);
+            if (decision == true){
+                p.classList.remove('invalid');
+                p.classList.add('valid');
+                console.log("cleared rule "+n+ "-"+j+"!");
+            } else {
+                p.classList.remove('valid');
+                p.classList.add('invalid');
+            }
+        }
+    }
+}
+
 //on the website loading up, load json rules and display in button dropdowns 
 function loadRules(){
+    //get live password input 
+    const passwordInput = document.getElementById('password-input');
+    passwordInput.addEventListener('input', testingPasswords(passwordInput.value));
     //get list of buttons inside of rightside button container
     let buttons = document.querySelectorAll("div.button-container button");
     let data = rules_new;
@@ -135,32 +166,6 @@ function getCurrentRules(rules, id) {
 }
 
 
-function testingPasswords() {
-    //need to add event listener, any time a password is entered
-    //and changed (page 1) or a new password is selected (page 2)
-    let pswrd = "hithere!" //just hard coded in for now
 
-    let array = document.querySelectorAll('.btn-selected');
-    let current_id = "";
-    console.log(array);
-    for (let i = 0; i < array.length; i++){
-        current_id = array[i].children[1].children[0].id;
-        console.log(typeof rules_new); 
-        let group = getCurrentRules(rules_new, current_id);
-        let n = array[i].id.slice(-1);
-        for (let j = 0; j < group.rules.length; j++) {
-            let p = document.getElementById("p-rule-" + n + "-" + j);
-            let decision = group.rules[j].decide(pswrd);
-            if (decision == true){
-                p.classList.remove('invalid');
-                p.classList.add('valid');
-                console.log("cleared rule "+n+ "-"+j+"!");
-            } else {
-                p.classList.remove('valid');
-                p.classList.add('invalid');
-            }
-        }
-    }
-}
 
 
