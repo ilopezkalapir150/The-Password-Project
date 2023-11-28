@@ -447,8 +447,16 @@ class bannedPasswords extends Rule {
         }
         return true;
     }
+    decide(password = "") {
+        let p = passwords;
+        for(let i = 0; i < 200; i++) {
+            if (password.toUpperCase() == p.password[i].toUpperCase()){
+                return false;
+            }
+        }
+        return true;
+    }
 }
-
 class bannedCaseSensitivePasswords extends Rule {
     validateValues() {
         if(!Array.isArray(this.values)) {
@@ -459,6 +467,15 @@ class bannedCaseSensitivePasswords extends Rule {
         }
         if(!Array.isArray(this.values[0])) {
             return false;
+        }
+        return true;
+    }
+    decide(password = "") {
+        let p = passwords;
+        for(let i = 0; i < 200; i++) {
+            if (password == p.password[i]){
+                return false;
+            }
         }
         return true;
     }
@@ -608,7 +625,6 @@ class notBadPassword extends Rule {
         }
         return true;
     }
-    
 }
 
 class noDictWords extends Rule {
