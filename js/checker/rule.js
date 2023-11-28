@@ -448,9 +448,8 @@ class bannedPasswords extends Rule {
         return true;
     }
     decide(password = "") {
-        let p = passwords;
-        for(let i = 0; i < 200; i++) {
-            if (password.toUpperCase() == p.password[i].toUpperCase()){
+        for(let i = 0; i < this.values[0].length; i++) {
+            if (password.toUpperCase() == this.values[0][i].toUpperCase()){
                 return false;
             }
         }
@@ -471,9 +470,8 @@ class bannedCaseSensitivePasswords extends Rule {
         return true;
     }
     decide(password = "") {
-        let p = passwords;
-        for(let i = 0; i < 200; i++) {
-            if (password == p.password[i]){
+        for(let i = 0; i < this.values[0].length; i++) {
+            if (password == this.values[0][i]){
                 return false;
             }
         }
