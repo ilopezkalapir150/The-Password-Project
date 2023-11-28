@@ -182,6 +182,8 @@ function setRules(btn) {
         row.appendChild(plcholder);
         table.appendChild(row);
     }
+
+    testingPasswords("");
 }
 
 
@@ -205,7 +207,7 @@ function togglePassword() {
 // returns the parsed set of rules for that particular school.
 function getCurrentRules(rules, id) {
     for(let i = 0; i < rules.length; i++) {
-        if (rules[i].groupId == id) {
+        if(rules[i].groupId == id) {
             current_rules = rules[i];
         }
     }
