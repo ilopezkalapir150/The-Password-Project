@@ -599,7 +599,16 @@ class noRepeated extends Rule {
 }
 
 class notBadPassword extends Rule {
-
+    validateValues() {
+        if(!Array.isArray(this.values)) {
+            return false;
+        }
+        if(!this.values.length == 0) {
+            return false;
+        }
+        return true;
+    }
+    
 }
 
 class noDictWords extends Rule {
@@ -615,7 +624,7 @@ class noDictWords extends Rule {
         }
         return true;
     }
-    
+
 }
 
 class nondeterministicRule extends Rule {
