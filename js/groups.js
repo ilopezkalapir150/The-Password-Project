@@ -1,119 +1,27 @@
 var groups = [
     {
-        "groupId": "b33808b1-a4d2-4b8e-b6d5-396cd67a3a98",
-        "groupName": "Berkeley",
-        "groupDisplayName": "University of California, Berkeley",
+        "groupId": "f60b25bd-ea2c-462c-9dc6-793a7059bdfe",
+        "groupName": "Swarthmore",
+        "groupDisplayName": "Swarthmore College",
         "groupLogo": "",
         "groupActive": true,
-        "groupUrl": "https://www.berkeley.edu/",
+        "groupUrl": "https://www.swarthmore.edu/",
         "groupRules": [
             {
-                "ruleId": "3d0ff324-189d-40fd-b769-29bc785b5f22",
+                "ruleId": "31195b64-2e8f-4fb1-80b6-86a651ce06a8",
                 "ruleName": "rule0",
-                "ruleDisplayName": "Minimum password length 12 characters",
+                "ruleDisplayName": "Minimum password length 8 characters",
                 "ruleParent": null,
                 "ruleDeterministic": true,
                 "ruleActive": true,
                 "ruleActiveRequirements": [],
                 "ruleType": "minimumLength",
-                "ruleValues": [12],
+                "ruleValues": [8],
                 "ruleCreatedDateTime": 1700568000,
                 "ruleModifiedDateTime": 1700568000
             },
             {
-                "ruleId": "df71d080-5e01-4dd1-9522-a108d11756d3",
-                "ruleName": "rule1",
-                "ruleDisplayName": "Maximum password length 255 characters",
-                "ruleParent": null,
-                "ruleDeterministic": true,
-                "ruleActive": true,
-                "ruleActiveRequirements": [],
-                "ruleType": "maximumLength",
-                "ruleValues": [255],
-                "ruleCreatedDateTime": 1700568000,
-                "ruleModifiedDateTime": 1700568000
-            },
-            {
-                "ruleId": "6856f21e-c460-46bd-8d25-29816fc752c2",
-                "ruleName": "rule2",
-                "ruleDisplayName": "Contains three different character classes",
-                "ruleParent": null,
-                "ruleDeterministic": true,
-                "ruleActive": true,
-                "ruleActiveRequirements": [],
-                "ruleType": "containTypes",
-                "ruleValues": [3, ["`", "~", "!", "@", "#", "$", "%", "^", "&", 
-                    "*", "(", ")", "-", "_", "=", "+", "[", "{", "]", "}", "|", 
-                    "\\", ";", ":", "\"", "'", ",", "<", ".", ">", "/", "?"]],
-                "ruleCreatedDateTime": 1700568000,
-                "ruleModifiedDateTime": 1700568000
-            },
-            {
-                "ruleId": "ed57f713-0ac7-462a-8ebd-49cfc98888d9",
-                "ruleName": "rule3",
-                "ruleDisplayName": "Cannot contain name or CalNet ID",
-                "ruleParent": null,
-                "ruleDeterministic": false,
-                "ruleActive": true,
-                "ruleActiveRequirements": [],
-                "ruleType": "nondeterministicRule",
-                "ruleValues": [],
-                "ruleCreatedDateTime": 1700568000,
-                "ruleModifiedDateTime": 1700568000
-            },
-            {
-                "ruleId": "3e77974a-0984-419e-9367-0086204061f3",
-                "ruleName": "rule4",
-                "ruleDisplayName": "Cannot contain leading spaces",
-                "ruleParent": null,
-                "ruleDeterministic": true,
-                "ruleActive": true,
-                "ruleActiveRequirements": [],
-                "ruleType": "bannedStartChar",
-                "ruleValues": [[" "]],
-                "ruleCreatedDateTime": 1700568000,
-                "ruleModifiedDateTime": 1700568000
-            },
-            {
-                "ruleId": "1ed78165-7e7d-44f5-872e-af0b88197898",
-                "ruleName": "rule5",
-                "ruleDisplayName": "Cannot contain trailing spaces",
-                "ruleParent": null,
-                "ruleDeterministic": true,
-                "ruleActive": true,
-                "ruleActiveRequirements": [],
-                "ruleType": "bannedEndChar",
-                "ruleValues": [[" "]],
-                "ruleCreatedDateTime": 1700568000,
-                "ruleModifiedDateTime": 1700568000
-            }
-        ],
-        "groupCreatedDateTime": 1700568000,
-        "groupModifiedDateTime": 1700568000
-    },
-    {
-        "groupId": "ee12ff16-c474-4cfc-afc2-d04d7a732217",
-        "groupName": "Brown",
-        "groupDisplayName": "Brown University",
-        "groupLogo": "",
-        "groupActive": true,
-        "groupUrl": "https://www.brown.edu/",
-        "groupRules": [
-            {
-                "ruleId": "7e3d6dfa-b57a-46c6-8ed7-a5caff13a7ae",
-                "ruleName": "rule0",
-                "ruleDisplayName": "Minimum password length 10 characters",
-                "ruleParent": null,
-                "ruleDeterministic": true,
-                "ruleActive": true,
-                "ruleActiveRequirements": [],
-                "ruleType": "minimumLength",
-                "ruleValues": [10],
-                "ruleCreatedDateTime": 1700568000,
-                "ruleModifiedDateTime": 1700568000
-            },
-            {
-                "ruleId": "7ec4cf75-785e-4f45-9a2f-28e18406fdcb",
+                "ruleId": "6b37fce7-c3ff-4970-8545-6123658a14e8",
                 "ruleName": "rule1",
                 "ruleDisplayName": "Require one uppercase letter",
                 "ruleParent": null,
@@ -126,7 +34,7 @@ var groups = [
                 "ruleModifiedDateTime": 1700568000
             },
             {
-                "ruleId": 2,
+                "ruleId": "4ed44551-5c7e-467e-94c3-a7aaccdafd04",
                 "ruleName": "rule2",
                 "ruleDisplayName": "Require one lowercase letter",
                 "ruleParent": null,
@@ -139,7 +47,7 @@ var groups = [
                 "ruleModifiedDateTime": 1700568000
             },
             {
-                "ruleId": "7f20fab6-ea90-465b-9fdb-7f5b32fc9b09",
+                "ruleId": "762d1481-20da-4fea-9060-dfd77b2343ca",
                 "ruleName": "rule3",
                 "ruleDisplayName": "Require one numeric character",
                 "ruleParent": null,
@@ -152,7 +60,7 @@ var groups = [
                 "ruleModifiedDateTime": 1700568000
             },
             {
-                "ruleId": "ae02565d-7998-4815-af28-eea219891866",
+                "ruleId": "85ddd124-6394-4d28-b8ca-3ae92906d495",
                 "ruleName": "rule4",
                 "ruleDisplayName": "Require one special character",
                 "ruleParent": null,
@@ -160,16 +68,16 @@ var groups = [
                 "ruleActive": true,
                 "ruleActiveRequirements": [],
                 "ruleType": "containSpecial",
-                "ruleValues": [["`", "~", "!", "@", "#", "$", "%", "^", "&", "*", 
-                    "(", ")", "-", "_", "=", "+", "[", "{", "]", "}", "|", "\\", 
+                "ruleValues": [["`", "~", "!", "@", "#", "$", "%", "^", "&", "*",
+                    "(", ")", "-", "_", "=", "+", "[", "{", "]", "}", "|", "\\",
                     ";", ":", "\"", "'", ",", "<", ".", ">", "/", "?"]],
                 "ruleCreatedDateTime": 1700568000,
                 "ruleModifiedDateTime": 1700568000
             },
             {
-                "ruleId": "fce50b5f-d5a1-404a-aa63-cd5187268477",
+                "ruleId": "7cfe4a3c-d4e8-4570-8cef-eeb13175a1ab",
                 "ruleName": "rule5",
-                "ruleDisplayName": "Cannot contain name or username",
+                "ruleDisplayName": "Password can never be reused",
                 "ruleParent": null,
                 "ruleDeterministic": false,
                 "ruleActive": true,
@@ -178,17 +86,44 @@ var groups = [
                 "ruleValues": [],
                 "ruleCreatedDateTime": 1700568000,
                 "ruleModifiedDateTime": 1700568000
-            },
+            }
+        ],
+        "groupCreatedDateTime": 1700568000,
+        "groupModifiedDateTime": 1700568000
+    },
+    {
+        "groupId": "4ecaae4c-a180-4ff7-b663-aa04d10bbc2b",
+        "groupName": "UCLA",
+        "groupDisplayName": "University of California Los Angeles",
+        "groupLogo": "",
+        "groupActive": true,
+        "groupUrl": "https://www.ucla.edu/",
+        "groupRules": [
             {
-                "ruleId": "0fe19e85-292a-49a2-bb74-dc7d33eaf041",
-                "ruleName": "rule6",
-                "ruleDisplayName": "Cannot be the same as previous 4 passwords",
+                "ruleId": "5ca7bb22-2331-4061-ad48-61dae1cb6615",
+                "ruleName": "rule0",
+                "ruleDisplayName": "Minimum password length 8 characters",
                 "ruleParent": null,
-                "ruleDeterministic": false,
+                "ruleDeterministic": true,
                 "ruleActive": true,
                 "ruleActiveRequirements": [],
-                "ruleType": "nondeterministicRule",
-                "ruleValues": [],
+                "ruleType": "minimumLength",
+                "ruleValues": [8],
+                "ruleCreatedDateTime": 1700568000,
+                "ruleModifiedDateTime": 1700568000
+            },
+            {
+                "ruleId": "409b4a83-e983-45d3-89d1-32bfacbbb927",
+                "ruleName": "rule1",
+                "ruleDisplayName": "Contains two different character classes",
+                "ruleParent": null,
+                "ruleDeterministic": true,
+                "ruleActive": true,
+                "ruleActiveRequirements": [],
+                "ruleType": "containBroadTypes",
+                "ruleValues": [2, ["`", "~", "!", "@", "#", "$", "%", "^", "&",
+                    "*", "(", ")", "-", "_", "=", "+", "[", "{", "]", "}", "|",
+                    "\\", ";", ":", "\"", "'", ",", "<", ".", ">", "/", "?", " "]],
                 "ruleCreatedDateTime": 1700568000,
                 "ruleModifiedDateTime": 1700568000
             }
@@ -265,8 +200,8 @@ var groups = [
                 "ruleActive": true,
                 "ruleActiveRequirements": [],
                 "ruleType": "containSpecial",
-                "ruleValues": [["`", "~", "!", "@", "#", "$", "%", "^", "&", "*", 
-                    "(", ")", "-", "_", "=", "+", "[", "{", "]", "}", "|", "\\", 
+                "ruleValues": [["`", "~", "!", "@", "#", "$", "%", "^", "&", "*",
+                    "(", ")", "-", "_", "=", "+", "[", "{", "]", "}", "|", "\\",
                     ";", ":", "\"", "'", ",", "<", ".", ">", "/", "?"]],
                 "ruleCreatedDateTime": 1700568000,
                 "ruleModifiedDateTime": 1700568000
@@ -294,6 +229,213 @@ var groups = [
                 "ruleActiveRequirements": [],
                 "ruleType": "noDictWords",
                 "ruleValues": [5],
+                "ruleCreatedDateTime": 1700568000,
+                "ruleModifiedDateTime": 1700568000
+            }
+        ],
+        "groupCreatedDateTime": 1700568000,
+        "groupModifiedDateTime": 1700568000
+    },
+    {
+        "groupId": "494384e8-ccf1-4b6f-80de-aca415feca8d",
+        "groupName": "Texas at Austin",
+        "groupDisplayName": "University of Texas at Austin",
+        "groupLogo": "",
+        "groupActive": true,
+        "groupUrl": "https://www.utexas.edu/",
+        "groupRules": [
+            {
+                "ruleId": "c76d06e5-725e-474f-9bbf-365ccbadc741",
+                "ruleName": "rule0",
+                "ruleDisplayName": "Minimum password length 9 characters",
+                "ruleParent": null,
+                "ruleDeterministic": true,
+                "ruleActive": true,
+                "ruleActiveRequirements": [],
+                "ruleType": "minimumLength",
+                "ruleValues": [9],
+                "ruleCreatedDateTime": 1700568000,
+                "ruleModifiedDateTime": 1700568000
+            },
+            {
+                "ruleId": "47b3406c-75ce-4764-9941-2b692119a2eb",
+                "ruleName": "rule1",
+                "ruleDisplayName": "Contains case sensitive letter",
+                "ruleParent": null,
+                "ruleDeterministic": true,
+                "ruleActive": true,
+                "ruleActiveRequirements": [],
+                "ruleType": "containLetter",
+                "ruleValues": [],
+                "ruleCreatedDateTime": 1700568000,
+                "ruleModifiedDateTime": 1700568000
+            },
+            {
+                "ruleId": "fcbda109-33ed-4b78-9671-8f7ed722a126",
+                "ruleName": "rule2",
+                "ruleDisplayName": "Require one numeric character",
+                "ruleParent": null,
+                "ruleDeterministic": true,
+                "ruleActive": true,
+                "ruleActiveRequirements": [],
+                "ruleType": "containNumber",
+                "ruleValues": [],
+                "ruleCreatedDateTime": 1700568000,
+                "ruleModifiedDateTime": 1700568000
+            },
+            {
+                "ruleId": "109c8f61-d1ad-458b-915a-418dbb09cf89",
+                "ruleName": "rule3",
+                "ruleDisplayName": "Cannot contain personal information such as name or userid.",
+                "ruleParent": null,
+                "ruleDeterministic": false,
+                "ruleActive": true,
+                "ruleActiveRequirements": [],
+                "ruleType": "nondeterministicRule",
+                "ruleValues": [],
+                "ruleCreatedDateTime": 1700568000,
+                "ruleModifiedDateTime": 1700568000
+            },
+            {
+                "ruleId": "772327d0-40a2-4547-899d-cd5efaf94a96",
+                "ruleName": "rule4",
+                "ruleDisplayName": "Cannot contain a word in the dictionary",
+                "ruleParent": null,
+                "ruleDeterministic": true,
+                "ruleActive": true,
+                "ruleActiveRequirements": [],
+                "ruleType": "noDictWords",
+                "ruleValues": [5],
+                "ruleCreatedDateTime": 1700568000,
+                "ruleModifiedDateTime": 1700568000
+            }
+        ],
+        "groupCreatedDateTime": 1700568000,
+        "groupModifiedDateTime": 1700568000
+    },
+    {
+        "groupId": "b33808b1-a4d2-4b8e-b6d5-396cd67a3a98",
+        "groupName": "Berkeley",
+        "groupDisplayName": "University of California, Berkeley",
+        "groupLogo": "",
+        "groupActive": true,
+        "groupUrl": "https://www.berkeley.edu/",
+        "groupRules": [
+            {
+                "ruleId": "3d0ff324-189d-40fd-b769-29bc785b5f22",
+                "ruleName": "rule0",
+                "ruleDisplayName": "Minimum password length 12 characters",
+                "ruleParent": null,
+                "ruleDeterministic": true,
+                "ruleActive": true,
+                "ruleActiveRequirements": [],
+                "ruleType": "minimumLength",
+                "ruleValues": [12],
+                "ruleCreatedDateTime": 1700568000,
+                "ruleModifiedDateTime": 1700568000
+            },
+            {
+                "ruleId": "df71d080-5e01-4dd1-9522-a108d11756d3",
+                "ruleName": "rule1",
+                "ruleDisplayName": "Maximum password length 255 characters",
+                "ruleParent": null,
+                "ruleDeterministic": true,
+                "ruleActive": true,
+                "ruleActiveRequirements": [],
+                "ruleType": "maximumLength",
+                "ruleValues": [255],
+                "ruleCreatedDateTime": 1700568000,
+                "ruleModifiedDateTime": 1700568000
+            },
+            {
+                "ruleId": "6856f21e-c460-46bd-8d25-29816fc752c2",
+                "ruleName": "rule2",
+                "ruleDisplayName": "Contains three different character classes",
+                "ruleParent": null,
+                "ruleDeterministic": true,
+                "ruleActive": true,
+                "ruleActiveRequirements": [],
+                "ruleType": "containTypes",
+                "ruleValues": [3, ["`", "~", "!", "@", "#", "$", "%", "^", "&",
+                    "*", "(", ")", "-", "_", "=", "+", "[", "{", "]", "}", "|",
+                    "\\", ";", ":", "\"", "'", ",", "<", ".", ">", "/", "?"]],
+                "ruleCreatedDateTime": 1700568000,
+                "ruleModifiedDateTime": 1700568000
+            },
+            {
+                "ruleId": "ed57f713-0ac7-462a-8ebd-49cfc98888d9",
+                "ruleName": "rule3",
+                "ruleDisplayName": "Cannot contain name or CalNet ID",
+                "ruleParent": null,
+                "ruleDeterministic": false,
+                "ruleActive": true,
+                "ruleActiveRequirements": [],
+                "ruleType": "nondeterministicRule",
+                "ruleValues": [],
+                "ruleCreatedDateTime": 1700568000,
+                "ruleModifiedDateTime": 1700568000
+            },
+            {
+                "ruleId": "3e77974a-0984-419e-9367-0086204061f3",
+                "ruleName": "rule4",
+                "ruleDisplayName": "Cannot contain leading spaces",
+                "ruleParent": null,
+                "ruleDeterministic": true,
+                "ruleActive": true,
+                "ruleActiveRequirements": [],
+                "ruleType": "bannedStartChar",
+                "ruleValues": [[" "]],
+                "ruleCreatedDateTime": 1700568000,
+                "ruleModifiedDateTime": 1700568000
+            },
+            {
+                "ruleId": "1ed78165-7e7d-44f5-872e-af0b88197898",
+                "ruleName": "rule5",
+                "ruleDisplayName": "Cannot contain trailing spaces",
+                "ruleParent": null,
+                "ruleDeterministic": true,
+                "ruleActive": true,
+                "ruleActiveRequirements": [],
+                "ruleType": "bannedEndChar",
+                "ruleValues": [[" "]],
+                "ruleCreatedDateTime": 1700568000,
+                "ruleModifiedDateTime": 1700568000
+            }
+        ],
+        "groupCreatedDateTime": 1700568000,
+        "groupModifiedDateTime": 1700568000
+    },
+    {
+        "groupId": "601c4f73-0801-4dcf-8f51-9945f2bcab7d",
+        "groupName": "Princeton",
+        "groupDisplayName": "Princeton University",
+        "groupLogo": "",
+        "groupActive": true,
+        "groupUrl": "https://www.princeton.edu/",
+        "groupRules": [
+            {
+                "ruleId": "389fd42e-d52c-4296-aef6-1c3766846ffb",
+                "ruleName": "rule0",
+                "ruleDisplayName": "Minimum password length 16 characters",
+                "ruleParent": null,
+                "ruleDeterministic": true,
+                "ruleActive": true,
+                "ruleActiveRequirements": [],
+                "ruleType": "minimumLength",
+                "ruleValues": [16],
+                "ruleCreatedDateTime": 1700568000,
+                "ruleModifiedDateTime": 1700568000
+            },
+            {
+                "ruleId": "77129220-2ce3-436e-976b-0d481004c948",
+                "ruleName": "rule1",
+                "ruleDisplayName": "Maximum password length 256 characters",
+                "ruleParent": null,
+                "ruleDeterministic": true,
+                "ruleActive": true,
+                "ruleActiveRequirements": [],
+                "ruleType": "maximumLength",
+                "ruleValues": [256],
                 "ruleCreatedDateTime": 1700568000,
                 "ruleModifiedDateTime": 1700568000
             }
@@ -344,8 +486,8 @@ var groups = [
                 "ruleActive": true,
                 "ruleActiveRequirements": [],
                 "ruleType": "containTypes",
-                "ruleValues": [3, ["`", "~", "!", "@", "#", "$", "%", "^", "&", 
-                    "*", "(", ")", "-", "_", "=", "+", "[", "{", "]", "}", "|", 
+                "ruleValues": [3, ["`", "~", "!", "@", "#", "$", "%", "^", "&",
+                    "*", "(", ")", "-", "_", "=", "+", "[", "{", "]", "}", "|",
                     "\\", ";", ":", "\"", "'", ",", "<", ".", ">", "/", "?"]],
                 "ruleCreatedDateTime": 1700568000,
                 "ruleModifiedDateTime": 1700568000
@@ -366,23 +508,23 @@ var groups = [
             {
                 "ruleId": "17ce0e21-ccfb-49ca-a524-efc46e27f0cd",
                 "ruleName": "rule4",
-                "ruleDisplayName": "Cannot contain a word in the dictionar if less than 12 characters",
+                "ruleDisplayName": "Cannot contain a word in the dictionary if less than 12 characters",
                 "ruleParent": null,
                 "ruleDeterministic": true,
                 "ruleActive": true,
                 "ruleActiveRequirements": [
                     {
-                            "ruleId": "686baa89-3220-4dd5-848b-ad526e4e1f27",
-                            "ruleName": "rule4.1",
-                            "ruleDisplayName": "Maximum password length 12 characters",
-                            "ruleParent": "17ce0e21-ccfb-49ca-a524-efc46e27f0cd",
-                            "ruleDeterministic": true,
-                            "ruleActive": true,
-                            "ruleActiveRequirements": [],
-                            "ruleType": "maximumLength",
-                            "ruleValues": [12],
-                            "ruleCreatedDateTime": 1700568000,
-                            "ruleModifiedDateTime": 1700568000
+                        "ruleId": "686baa89-3220-4dd5-848b-ad526e4e1f27",
+                        "ruleName": "rule4.1",
+                        "ruleDisplayName": "Maximum password length 12 characters",
+                        "ruleParent": "17ce0e21-ccfb-49ca-a524-efc46e27f0cd",
+                        "ruleDeterministic": true,
+                        "ruleActive": true,
+                        "ruleActiveRequirements": [],
+                        "ruleType": "maximumLength",
+                        "ruleValues": [12],
+                        "ruleCreatedDateTime": 1700568000,
+                        "ruleModifiedDateTime": 1700568000
                     }
                 ],
                 "ruleType": "noDictWords",
@@ -424,8 +566,8 @@ var groups = [
                 "ruleActive": true,
                 "ruleActiveRequirements": [],
                 "ruleType": "containTypes",
-                "ruleValues": [2, ["`", "~", "!", "@", "#", "$", "%", "^", "&", 
-                    "*", "(", ")", "-", "_", "=", "+", "[", "{", "]", "}", "|", 
+                "ruleValues": [2, ["`", "~", "!", "@", "#", "$", "%", "^", "&",
+                    "*", "(", ")", "-", "_", "=", "+", "[", "{", "]", "}", "|",
                     "\\", ";", ":", "\"", "'", ",", "<", ".", ">", "/", "?"]],
                 "ruleCreatedDateTime": 1700568000,
                 "ruleModifiedDateTime": 1700568000
@@ -453,44 +595,6 @@ var groups = [
                 "ruleActiveRequirements": [],
                 "ruleType": "noDictWords",
                 "ruleValues": [5],
-                "ruleCreatedDateTime": 1700568000,
-                "ruleModifiedDateTime": 1700568000
-            }
-        ],
-        "groupCreatedDateTime": 1700568000,
-        "groupModifiedDateTime": 1700568000
-    },
-    {
-        "groupId": "601c4f73-0801-4dcf-8f51-9945f2bcab7d",
-        "groupName": "Princeton",
-        "groupDisplayName": "Princeton University",
-        "groupLogo": "",
-        "groupActive": true,
-        "groupUrl": "https://www.princeton.edu/",
-        "groupRules": [
-            {
-                "ruleId": "389fd42e-d52c-4296-aef6-1c3766846ffb",
-                "ruleName": "rule0",
-                "ruleDisplayName": "Minimum password length 16 characters",
-                "ruleParent": null,
-                "ruleDeterministic": true,
-                "ruleActive": true,
-                "ruleActiveRequirements": [],
-                "ruleType": "minimumLength",
-                "ruleValues": [16],
-                "ruleCreatedDateTime": 1700568000,
-                "ruleModifiedDateTime": 1700568000
-            },
-            {
-                "ruleId": "77129220-2ce3-436e-976b-0d481004c948",
-                "ruleName": "rule1",
-                "ruleDisplayName": "Maximum password length 256 characters",
-                "ruleParent": null,
-                "ruleDeterministic": true,
-                "ruleActive": true,
-                "ruleActiveRequirements": [],
-                "ruleType": "maximumLength",
-                "ruleValues": [256],
                 "ruleCreatedDateTime": 1700568000,
                 "ruleModifiedDateTime": 1700568000
             }
@@ -615,8 +719,8 @@ var groups = [
                     "ruleModifiedDateTime": 1700568000
                 }],
                 "ruleType": "containTypes",
-                "ruleValues": [3, ["`", "~", "!", "@", "#", "$", "%", "^", "&", 
-                    "*", "(", ")", "-", "_", "=", "+", "[", "{", "]", "}", "|", 
+                "ruleValues": [3, ["`", "~", "!", "@", "#", "$", "%", "^", "&",
+                    "*", "(", ")", "-", "_", "=", "+", "[", "{", "]", "}", "|",
                     "\\", ";", ":", "\"", "'", ",", "<", ".", ">", "/", "?"]],
                 "ruleCreatedDateTime": 1700568000,
                 "ruleModifiedDateTime": 1700568000
@@ -650,214 +754,5 @@ var groups = [
         ],
         "groupCreatedDateTime": 1700568000,
         "groupModifiedDateTime": 1700568000
-    },
-    {
-        "groupId": "f60b25bd-ea2c-462c-9dc6-793a7059bdfe",
-        "groupName": "Swarthmore",
-        "groupDisplayName": "Swarthmore College",
-        "groupLogo": "",
-        "groupActive": true,
-        "groupUrl": "https://www.swarthmore.edu/",
-        "groupRules": [
-            {
-                "ruleId": "31195b64-2e8f-4fb1-80b6-86a651ce06a8",
-                "ruleName": "rule0",
-                "ruleDisplayName": "Minimum password length 8 characters",
-                "ruleParent": null,
-                "ruleDeterministic": true,
-                "ruleActive": true,
-                "ruleActiveRequirements": [],
-                "ruleType": "minimumLength",
-                "ruleValues": [8],
-                "ruleCreatedDateTime": 1700568000,
-                "ruleModifiedDateTime": 1700568000
-            },
-            {
-                "ruleId": "6b37fce7-c3ff-4970-8545-6123658a14e8",
-                "ruleName": "rule1",
-                "ruleDisplayName": "Require one uppercase letter",
-                "ruleParent": null,
-                "ruleDeterministic": true,
-                "ruleActive": true,
-                "ruleActiveRequirements": [],
-                "ruleType": "containUpper",
-                "ruleValues": [],
-                "ruleCreatedDateTime": 1700568000,
-                "ruleModifiedDateTime": 1700568000
-            },
-            {
-                "ruleId": "4ed44551-5c7e-467e-94c3-a7aaccdafd04",
-                "ruleName": "rule2",
-                "ruleDisplayName": "Require one lowercase letter",
-                "ruleParent": null,
-                "ruleDeterministic": true,
-                "ruleActive": true,
-                "ruleActiveRequirements": [],
-                "ruleType": "containLower",
-                "ruleValues": [],
-                "ruleCreatedDateTime": 1700568000,
-                "ruleModifiedDateTime": 1700568000
-            },
-            {
-                "ruleId": "762d1481-20da-4fea-9060-dfd77b2343ca",
-                "ruleName": "rule3",
-                "ruleDisplayName": "Require one numeric character",
-                "ruleParent": null,
-                "ruleDeterministic": true,
-                "ruleActive": true,
-                "ruleActiveRequirements": [],
-                "ruleType": "containNumber",
-                "ruleValues": [],
-                "ruleCreatedDateTime": 1700568000,
-                "ruleModifiedDateTime": 1700568000
-            },
-            {
-                "ruleId": "85ddd124-6394-4d28-b8ca-3ae92906d495",
-                "ruleName": "rule4",
-                "ruleDisplayName": "Require one special character",
-                "ruleParent": null,
-                "ruleDeterministic": true,
-                "ruleActive": true,
-                "ruleActiveRequirements": [],
-                "ruleType": "containSpecial",
-                "ruleValues": [["`", "~", "!", "@", "#", "$", "%", "^", "&", "*", 
-                    "(", ")", "-", "_", "=", "+", "[", "{", "]", "}", "|", "\\", 
-                    ";", ":", "\"", "'", ",", "<", ".", ">", "/", "?"]],
-                "ruleCreatedDateTime": 1700568000,
-                "ruleModifiedDateTime": 1700568000
-            },
-            {
-                "ruleId": "7cfe4a3c-d4e8-4570-8cef-eeb13175a1ab",
-                "ruleName": "rule5",
-                "ruleDisplayName": "Password can never be reused",
-                "ruleParent": null,
-                "ruleDeterministic": false,
-                "ruleActive": true,
-                "ruleActiveRequirements": [],
-                "ruleType": "nondeterministicRule",
-                "ruleValues": [],
-                "ruleCreatedDateTime": 1700568000,
-                "ruleModifiedDateTime": 1700568000
-            }
-        ],
-        "groupCreatedDateTime": 1700568000,
-        "groupModifiedDateTime": 1700568000
-    },
-    {
-        "groupId": "494384e8-ccf1-4b6f-80de-aca415feca8d",
-        "groupName": "Texas at Austin",
-        "groupDisplayName": "University of Texas at Austin",
-        "groupLogo": "",
-        "groupActive": true,
-        "groupUrl": "https://www.utexas.edu/",
-        "groupRules": [
-            {
-                "ruleId": "c76d06e5-725e-474f-9bbf-365ccbadc741",
-                "ruleName": "rule0",
-                "ruleDisplayName": "Minimum password length 9 characters",
-                "ruleParent": null,
-                "ruleDeterministic": true,
-                "ruleActive": true,
-                "ruleActiveRequirements": [],
-                "ruleType": "minimumLength",
-                "ruleValues": [9],
-                "ruleCreatedDateTime": 1700568000,
-                "ruleModifiedDateTime": 1700568000
-            },
-            {
-                "ruleId": "47b3406c-75ce-4764-9941-2b692119a2eb",
-                "ruleName": "rule1",
-                "ruleDisplayName": "Contains case sensitive letter",
-                "ruleParent": null,
-                "ruleDeterministic": true,
-                "ruleActive": true,
-                "ruleActiveRequirements": [],
-                "ruleType": "containLetter",
-                "ruleValues": [],
-                "ruleCreatedDateTime": 1700568000,
-                "ruleModifiedDateTime": 1700568000
-            },
-            {
-                "ruleId": "fcbda109-33ed-4b78-9671-8f7ed722a126",
-                "ruleName": "rule2",
-                "ruleDisplayName": "Require one numeric character",
-                "ruleParent": null,
-                "ruleDeterministic": true,
-                "ruleActive": true,
-                "ruleActiveRequirements": [],
-                "ruleType": "containNumber",
-                "ruleValues": [],
-                "ruleCreatedDateTime": 1700568000,
-                "ruleModifiedDateTime": 1700568000
-            },
-            {
-                "ruleId": "109c8f61-d1ad-458b-915a-418dbb09cf89",
-                "ruleName": "rule3",
-                "ruleDisplayName": "Cannot contain personal information such as name or userid.",
-                "ruleParent": null,
-                "ruleDeterministic": false,
-                "ruleActive": true,
-                "ruleActiveRequirements": [],
-                "ruleType": "nondeterministicRule",
-                "ruleValues": [],
-                "ruleCreatedDateTime": 1700568000,
-                "ruleModifiedDateTime": 1700568000
-            },
-            {
-                "ruleId": "772327d0-40a2-4547-899d-cd5efaf94a96",
-                "ruleName": "rule4",
-                "ruleDisplayName": "Cannot contain a word in the dictionary",
-                "ruleParent": null,
-                "ruleDeterministic": true,
-                "ruleActive": true,
-                "ruleActiveRequirements": [],
-                "ruleType": "noDictWords",
-                "ruleValues": [5],
-                "ruleCreatedDateTime": 1700568000,
-                "ruleModifiedDateTime": 1700568000
-            }
-        ],
-        "groupCreatedDateTime": 1700568000,
-        "groupModifiedDateTime": 1700568000
-    },
-    {
-        "groupId": "4ecaae4c-a180-4ff7-b663-aa04d10bbc2b",
-        "groupName": "UCLA",
-        "groupDisplayName": "University of California Los Angeles",
-        "groupLogo": "",
-        "groupActive": true,
-        "groupUrl": "https://www.ucla.edu/",
-        "groupRules": [
-            {
-                "ruleId": "5ca7bb22-2331-4061-ad48-61dae1cb6615",
-                "ruleName": "rule0",
-                "ruleDisplayName": "Minimum password length 8 characters",
-                "ruleParent": null,
-                "ruleDeterministic": true,
-                "ruleActive": true,
-                "ruleActiveRequirements": [],
-                "ruleType": "minimumLength",
-                "ruleValues": [8],
-                "ruleCreatedDateTime": 1700568000,
-                "ruleModifiedDateTime": 1700568000
-            },
-            {
-                "ruleId": "409b4a83-e983-45d3-89d1-32bfacbbb927",
-                "ruleName": "rule1",
-                "ruleDisplayName": "Contains two different character classes",
-                "ruleParent": null,
-                "ruleDeterministic": true,
-                "ruleActive": true,
-                "ruleActiveRequirements": [],
-                "ruleType": "containBroadTypes",
-                "ruleValues": [2, ["`", "~", "!", "@", "#", "$", "%", "^", "&", 
-                    "*", "(", ")", "-", "_", "=", "+", "[", "{", "]", "}", "|", 
-                    "\\", ";", ":", "\"", "'", ",", "<", ".", ">", "/", "?", " "]],
-                "ruleCreatedDateTime": 1700568000,
-                "ruleModifiedDateTime": 1700568000
-            }
-        ],
-        "groupCreatedDateTime": 1700568000,
-        "groupModifiedDateTime": 1700568000
     }
-]
+];

@@ -141,7 +141,7 @@ class Rule {
         throw new Error("Rule.validateValues: method not implemented.");
     }
 
-    active(password = "") {
+    checkActive(password = "") {
         if(!this.active) {
             return false;
         }
@@ -447,15 +447,17 @@ class bannedPasswords extends Rule {
         }
         return true;
     }
+
     decide(password = "") {
         for(let i = 0; i < this.values[0].length; i++) {
-            if (password.toUpperCase() == this.values[0][i].toUpperCase()){
+            if(password.toUpperCase() == this.values[0][i].toUpperCase()) {
                 return false;
             }
         }
         return true;
     }
 }
+
 class bannedCaseSensitivePasswords extends Rule {
     validateValues() {
         if(!Array.isArray(this.values)) {
@@ -469,9 +471,10 @@ class bannedCaseSensitivePasswords extends Rule {
         }
         return true;
     }
+
     decide(password = "") {
         for(let i = 0; i < this.values[0].length; i++) {
-            if (password == this.values[0][i]){
+            if(password == this.values[0][i]) {
                 return false;
             }
         }
@@ -492,6 +495,16 @@ class bannedWords extends Rule {
         }
         return true;
     }
+
+    decide(password = "") {
+        for(let i = 0; i < this.values[0].length; i++) {
+            if(password.toUpperCase().includes(
+                this.values[0][i].toUpperCase())) {
+                return false;
+            }
+        }
+        return true;
+    }
 }
 
 class bannedCaseSensitiveWords extends Rule {
@@ -508,6 +521,14 @@ class bannedCaseSensitiveWords extends Rule {
         return true;
     }
 
+    decide(password = "") {
+        for(let i = 0; i < this.values[0].length; i++) {
+            if(password.includes(this.values[0][i])) {
+                return false;
+            }
+        }
+        return true;
+    }
 }
 
 class bannedChar extends Rule {
@@ -602,6 +623,7 @@ class noRepeated extends Rule {
         }
         return true;
     }
+
     decide(password = "") {
         // Expression building.
         let expression = "(.)\\1{";
@@ -610,18 +632,6 @@ class noRepeated extends Rule {
 
         expression = new RegExp(expression);
         return !expression.test(password);
-    }
-}
-
-class notBadPassword extends Rule {
-    validateValues() {
-        if(!Array.isArray(this.values)) {
-            return false;
-        }
-        if(!this.values.length == 0) {
-            return false;
-        }
-        return true;
     }
 }
 
@@ -639,14 +649,17 @@ class noDictWords extends Rule {
         return true;
     }
 
+    decide(password = "") {
+
+    }
 }
 
 class nondeterministicRule extends Rule {
-    set active(active) {
-        this._active = false;
+    set deterministic(deterministic) {
+        this._deterministic = false;
     }
 
-    get active() {
+    get deterministic() {
         return false;
     }
 
@@ -725,20 +738,16 @@ function parseRule(json) {
             var rule = new containBroadTypesRule();
             break;
         case "bannedPasswords":
-            //////////////////////////////////////////////////////////////////// NOT IMPLEMENTED YET!
-            var rule = new nondeterministicRule();
+            var rule = new bannedPasswords();
             break;
         case "bannedCaseSensitivePasswords":
-            //////////////////////////////////////////////////////////////////// NOT IMPLEMENTED YET!
-            var rule = new nondeterministicRule();
+            var rule = new bannedCaseSensitivePasswords();
             break;
         case "bannedWords":
-            //////////////////////////////////////////////////////////////////// NOT IMPLEMENTED YET!
-            var rule = new nondeterministicRule();
+            var rule = new bannedWords();
             break;
         case "bannedCaseSensitiveWords":
-            //////////////////////////////////////////////////////////////////// NOT IMPLEMENTED YET!
-            var rule = new nondeterministicRule();
+            var rule = new bannedCaseSensitiveWords();
             break;
         case "bannedChar":
             var rule = new bannedChar();
@@ -751,10 +760,6 @@ function parseRule(json) {
             break;
         case "noRepeated":
             var rule = new noRepeated();
-            break;
-        case "notBadPassword":
-            //////////////////////////////////////////////////////////////////// NOT IMPLEMENTED YET!
-            var rule = new nondeterministicRule();
             break;
         case "noDictWords":
             //////////////////////////////////////////////////////////////////// NOT IMPLEMENTED YET!

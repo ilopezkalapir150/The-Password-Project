@@ -63,7 +63,7 @@
         {
             "ruleId": "17ce0e21-ccfb-49ca-a524-efc46e27f0cd",
             "ruleName": "rule4",
-            "ruleDisplayName": "Cannot contain a word in the dictionar if less than 12 characters",
+            "ruleDisplayName": "Cannot contain a word in the dictionary if less than 12 characters",
             "ruleParent": null,
             "ruleDeterministic": true,
             "ruleActive": true,
