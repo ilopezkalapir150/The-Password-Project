@@ -90,8 +90,9 @@ function loadRules(){
         }
         content.appendChild(item);
     }
+}
 
-
+function loadCommonPasswords(){
     //load in passwords to page 2 table 
     let p = passwords;
     console.log(p);
@@ -101,7 +102,8 @@ function loadRules(){
         let item = document.createElement("tr");
         item.setAttribute("id", "p-" + (i + 1));
         item.addEventListener("click", function () {
-            selectPassword(this)});
+            selectPassword(this)
+        });
 
         let row1 = document.createElement("td");
         row1.innerText = p[0].rank[i];
@@ -116,6 +118,18 @@ function loadRules(){
         table.appendChild(item);
 
     }
+}
+
+function loadPageOne(){
+    loadRules();
+    loadInput();
+    console.log("page 1 loaded");
+}
+
+function loadPageTwo() {
+    loadRules();
+    loadCommonPasswords();
+    console.log("page 2 loaded");
 }
 
 //when school button clicked, load rules wherever they need to go to be applied to password
