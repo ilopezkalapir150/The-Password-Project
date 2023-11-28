@@ -1,4 +1,5 @@
-function sendPasswordOnClick(){
+function sendPasswordOnClick(btn){
+    setRules(btn); 
     var passwordInput = document.getElementById("password-input");
     console.log(passwordInput); 
     testingPasswords(passwordInput.value); 
@@ -16,7 +17,8 @@ function selectPassword(row){
     testingPasswords(page2password);
 }
 
-function sendPasswordOnClickP2(){
+function sendPasswordOnClickP2(btn){
+    setRules(btn); 
     let page2password = document.querySelectorAll(".selected"); 
     console.log(page2password); 
     console.log(page2password[0].children[1]); 
