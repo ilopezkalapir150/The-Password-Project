@@ -434,6 +434,67 @@ class containBroadTypesRule extends Rule {
     }
 }
 
+class bannedPasswords extends Rule {
+    validateValues() {
+        if(!Array.isArray(this.values)) {
+            return false;
+        }
+        if(!this.values.length == 1) {
+            return false;
+        }
+        if(!Array.isArray(this.values[0])) {
+            return false;
+        }
+        return true;
+    }
+}
+
+class bannedCaseSensitivePasswords extends Rule {
+    validateValues() {
+        if(!Array.isArray(this.values)) {
+            return false;
+        }
+        if(!this.values.length == 1) {
+            return false;
+        }
+        if(!Array.isArray(this.values[0])) {
+            return false;
+        }
+        return true;
+    }
+}
+
+class bannedWords extends Rule {
+    validateValues() {
+        if(!Array.isArray(this.values)) {
+            return false;
+        }
+        if(!this.values.length == 1) {
+            return false;
+        }
+        if(!Array.isArray(this.values[0])) {
+            return false;
+        }
+        return true;
+    }
+}
+
+class bannedCaseSensitiveWords extends Rule {
+    validateValues() {
+        if(!Array.isArray(this.values)) {
+            return false;
+        }
+        if(!this.values.length == 1) {
+            return false;
+        }
+        if(!Array.isArray(this.values[0])) {
+            return false;
+        }
+        return true;
+    }
+
+}
+
 class bannedChar extends Rule {
     validateValues() {
         if(!Array.isArray(this.values)) {
@@ -535,6 +596,26 @@ class noRepeated extends Rule {
         expression = new RegExp(expression);
         return !expression.test(password);
     }
+}
+
+class notBadPassword extends Rule {
+
+}
+
+class noDictWords extends Rule {
+    validateValues() {
+        if(!Array.isArray(this.values)) {
+            return false;
+        }
+        if(!this.values.length == 1) {
+            return false;
+        }
+        if(!Number.isInteger(this.values[0])) {
+            return false;
+        }
+        return true;
+    }
+    
 }
 
 class nondeterministicRule extends Rule {
