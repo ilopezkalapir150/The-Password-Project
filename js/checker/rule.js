@@ -660,23 +660,23 @@ class noDictWords extends Rule {
         // For now, loop through all of the potential combinations and check.
         for(let i = 0; i < password.length; i++) {
             // Using jMax so that we don't check the small substrings.
-            let jMax = password.length - i - this.values[0];
+            let jMax = password.length - i - this.values[0] + 1;
             if(jMax < 0) {
                 jMax = 0;
             }
 
             for(let j = this.values[0]; j < this.values[0] + jMax; j++) {
                 // The dictionary doesn't have numbers and symbols.
-                if(containNumberTester.decide(password.slice(i, i + j + 1))) {
+                if(containNumberTester.decide(password.slice(i, i + j))) {
                     continue;
                 }
-                if(containSpecialTester.decide(password.slice(i, i + j + 1))) {
+                if(containSpecialTester.decide(password.slice(i, i + j))) {
                     continue;
                 }
 
                 // Check against the dictionary stored.
                 if(dictionary.includes(
-                    password.slice(i, i + j + 1).toLowerCase())) {
+                    password.slice(i, i + j).toLowerCase())) {
                     return false;
                 }
             }
