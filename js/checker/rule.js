@@ -650,7 +650,32 @@ class noDictWords extends Rule {
     }
 
     decide(password = "") {
+        let containNumberTester = new containNumberRule();
+        let containSpecialTester = new containSpecialRule();
+        containSpecialTester.values = [["`", "~", "!", "@", "#", "$", "%", "^", 
+            "&", "*", "(", ")", "-", "_", "=", "+", "[", "{", "]", "}", "|", 
+            "\\", ";", ":", "\"", "'", ",", "<", ".", ">", "/", "?"]]
 
+        // Note that this function has a lot of potential to be improved.
+        // For now, loop through all of the potential combinations and check.
+        for(let i = 0; i < password.length; i++) {
+            for(let j = 0; j < password.length - i - this.values[0]; j++) {
+                // The dictionary doesn't have numbers and symbols.
+                if(containNumberTester.decide(password.slice(i, i + j))) {
+                    continue;
+                }
+                if(containSpecialTester.decide(password.slice(i, i + j))) {
+                    continue;
+                }
+
+                // Check against the dictionary stored.
+                if(dictionary.includes(
+                    password.slice(i, i + j).toLowerCase())) {
+                    return false;
+                }
+            }
+        }
+        return true;
     }
 }
 
@@ -762,8 +787,7 @@ function parseRule(json) {
             var rule = new noRepeated();
             break;
         case "noDictWords":
-            //////////////////////////////////////////////////////////////////// NOT IMPLEMENTED YET!
-            var rule = new nondeterministicRule();
+            var rule = new noDictWords();
             break;
         case "nondeterministicRule":
             var rule = new nondeterministicRule();
