@@ -659,6 +659,7 @@ class noDictWords extends Rule {
         // Note that this function has a lot of potential to be improved.
         // For now, loop through all of the potential combinations and check.
         for(let i = 0; i < password.length; i++) {
+            // Using jMax so that we don't check the small substrings.
             let jMax = password.length - i - this.values[0];
             if(jMax < 0) {
                 jMax = 0;
