@@ -50,11 +50,11 @@ input#password-input {
     padding: 4px 8px;
     font-size: 16px;
     min-height: 24px;
-    min-width: 512px;
+    min-width: 500px;
 }
 
 .content-container-grid {
-    display: grid;
+    display: flex;
     grid-template-columns: 1fr 1fr;
     /* height: 95vh; */
     padding: 3rem calc((100vw - 1300px)/2);
@@ -67,6 +67,7 @@ input#password-input {
     align-items: flex-start;
     color: #000;
     padding: 0 2rem;
+    flex: 4;
 }
 
 .column-left h1 {
@@ -74,6 +75,10 @@ input#password-input {
     font-weight: 400;
     color: #000000;
     font-size: 35px;
+}
+
+.column-left p {
+    font-size: 15px;
 }
 
 .rectangle {
@@ -91,7 +96,7 @@ input#password-input {
     background-color: white;
     overflow-y: scroll;
     max-height: 380px;
-    width: 300px; 
+    width: 370px; 
     margin: 0; 
     padding: 0; 
     border: solid 1px #000;
@@ -104,6 +109,7 @@ input#password-input {
     align-items: flex-start;
     color: #000;
     padding: 0 2rem;
+    flex: 5;
 }
 
 .column-right h1 {
@@ -127,7 +133,7 @@ input#password-input {
 }
 
 .logo-button:hover {
-    background-color: pink;
+    background-color: rgba(173, 201, 211, 0.433);
 }
 
 .school-logo {
@@ -144,6 +150,7 @@ input#password-input {
 
 .table {
     margin: 0 auto;
+    width: 370px;
 }
 
 .rule-text {
@@ -160,7 +167,7 @@ tr.selected {
   }
 
 .btn-selected {
-    background-color: pink;
+    background-color: rgba(173, 201, 211, 0.433);
 }
 
 .dropdown:hover .dropdown-menu {
@@ -171,21 +178,17 @@ tr.selected {
     /*Without this, clicking will make it sticky*/
     pointer-events: none;
 }
-/* 
-.dropdown {
-    display: flex;
-    flex:1;
-    background-color: purple;
-} */
 
 .dropdown-menu {
     /* display: none;
     position: absolute; */
     background-color: #f9f9f9;
-    min-width: 160px;
+    /* min-width: 160px; */
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
     padding-left: 12px;
+    padding-right: 8px;
+    width: 240px;
     /* font-size: 16px; */
 }
 
