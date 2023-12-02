@@ -26,13 +26,7 @@ function sendPasswordOnInput(password) {
     testingPasswords(pswrd);
 }
 
-function testingPasswords(pswrd) {
-    // Need to add event listener, any time a password is entered
-    // and changed (page 1) or a new password is selected (page 2)
-    
-    // const passwordInput = document.getElementById("password-input");
-    // passwordInput.addEventListener("input", testingPasswords(passwordInput.value));
-    
+function testingPasswords(pswrd) {    
     let array = document.querySelectorAll(".btn-selected");
     let current_id = "";
     for(let i = 0; i < array.length; i++){
@@ -84,7 +78,6 @@ function loadInput() {
 
 // On the website loading up, load json rules and display in button dropdowns.
 function loadRules() {
-    // passwordInput.addEventListener("input", testingPasswords(passwordInput.value));
     // Get list of buttons inside of rightside button container.
     let buttons = document.querySelectorAll("div.button-container button");
     let data = groups;
@@ -116,16 +109,16 @@ function loadCommonPasswords() {
             selectPassword(this)
         });
 
-        let row1 = document.createElement("td");
-        row1.innerText = p[0].rank[i];
-        let row2 = document.createElement("td");
-        row2.innerText = p[0].password[i];
-        let row3 = document.createElement("td");
-        row3.innerText = p[0].users[i];
+        let col1 = document.createElement("td");
+        col1.innerText = p[0].rank[i];
+        let col2 = document.createElement("td");
+        col2.innerText = p[0].password[i];
+        let col3 = document.createElement("td");
+        col3.innerText = p[0].users[i];
 
-        item.appendChild(row1);
-        item.appendChild(row2);
-        item.appendChild(row3);
+        item.appendChild(col1);
+        item.appendChild(col2);
+        item.appendChild(col3);
         table.appendChild(item);
     }
 }
@@ -141,7 +134,7 @@ function loadPageTwo() {
 }
 
 // When school button clicked, load rules wherever they need to go to be applied to password.
-// This may include checklist display (bottom of page), perhaps to an exterior password checker func?
+// This includes checklist display (bottom of page)
 function setRules(btn) {
     let table = document.getElementById("school-list");
     let current_id = btn.children[1].children[0].id;
@@ -174,7 +167,7 @@ function setRules(btn) {
     // Handle placeholder text.
     if(document.getElementById("table-placeholder")) {
         document.getElementById("table-placeholder").remove()
-    } else if (table.childNodes.length == 2) { // 2 bcause of exterior tr and tr.
+    } else if (table.childNodes.length == 2) {
         let row = document.createElement("tr");
         let plcholder = document.createElement("td");
         row.setAttribute("id", "table-placeholder");

@@ -20,6 +20,12 @@ nav {
     /* padding: 100 100px:  */
 }
 
+#nordpass-link {
+    text-decoration: none;
+    cursor: pointer;
+    color:#4c8fc2;
+}
+
 .logo {
     font-family: "Monospace", "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif; 
     font-weight: 900;
