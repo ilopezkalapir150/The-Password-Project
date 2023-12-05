@@ -121,11 +121,6 @@ nav a:hover{
     filter: drop-shadow(0px 5px 4px #0D2D37);
 }
 
-p {
-    font-size: 14px;
-    font-family: "Inter-Regular", Helvetica;
-}
-
 input#password-input {
     padding: 4px 8px;
     font-size: 16px;
@@ -333,6 +328,10 @@ tr.selected {
     /* font-size: 16px; */
 }
 
+.eye {
+    padding-left: 10px;
+}
+
 .eye:hover {
     cursor: pointer;
 }
@@ -399,3 +398,19 @@ li {
 .pretty-p {
     font-size: 16px;
 }
+
+#footer-page1 {
+   display: flex;
+   justify-content: center;
+}
+
+.footer-p {
+    /* padding: 10px; */
+    /* margin: 0 auto; */
+    color: #E7EAEC;
+}
+
+/* p {
+    font-size: 14px;
+    font-family: "Inter-Regular", Helvetica;
+} */

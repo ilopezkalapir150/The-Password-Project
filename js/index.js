@@ -1,5 +1,5 @@
 function notYetAlert() {
-    alert("That's not done yet!");
+    alert("Sorry, this page isn't done yet!");
 
 }
 function sendPasswordOnClick(btn){
