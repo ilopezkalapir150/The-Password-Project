@@ -52,3 +52,12 @@ Source: https://www.fileformat.info/info/unicode/font/roboto/grid.htm
     unicode-range: U+00-52F, U+1E00-1FFF, U+2000–22FF, U+25CA, U+EE01-EE02, 
         U+F6C3, U+FB01-FB04, U+FEFF, U+FFFC-FFFD;
 }
+
+@font-face {
+    font-family: "Inter";
+    src: url("fonts/Inter-Regular.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+    unicode-range: U+00-52F, U+1E00-1FFF, U+2000–22FF, U+25CA, U+EE01-EE02,
+        U+F6C3, U+FB01-FB04, U+FEFF, U+FFFC-FFFD;
+}

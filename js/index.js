@@ -1,3 +1,7 @@
+function notYetAlert() {
+    alert("That's not done yet!");
+
+}
 function sendPasswordOnClick(btn){
     setRules(btn); 
     var passwordInput = document.getElementById("password-input");
@@ -79,7 +83,7 @@ function loadInput() {
 // On the website loading up, load json rules and display in button dropdowns.
 function loadRules() {
     // Get list of buttons inside of rightside button container.
-    let buttons = document.querySelectorAll("div.button-container button");
+    let buttons = document.querySelectorAll("div.button-container-grid button");
     let data = groups;
     // Loop through dropdown items and update with new rules.
     // From json, match groupID to dd-[i]].
@@ -123,9 +127,42 @@ function loadCommonPasswords() {
     }
 }
 
+// function scrollAppear() {
+//     var item = document.getElementById('mouse');
+//     var itemPosition = item.getBoundingClientRect().top;
+//     var screenPosition = window.innerHeight / 1.3;
+    
+
+//     if (itemPosition < screenPosition/2) {
+//         item.classList.add('appear');
+//         item.classList.remove('special-hidden');
+//     }
+// }
+
+function scrollDisappear() {
+    var item = document.getElementById('mouse');
+    var itemPosition = item.getBoundingClientRect().top;
+    var screenPosition = window.innerHeight / 1.3;
+
+
+    if (itemPosition < screenPosition / 2) {
+        item.classList.remove('appear');
+        item.classList.remove('flickerAnimation');
+        item.classList.add('special-hidden');
+    }
+}
+
+function scrollWheel(){
+    let wheel = document.getElementById('scroll-wheel');
+
+}
+
 function loadPageOne() {
     loadRules();
     loadInput();
+    // window.addEventListener('scroll', scrollAppear);
+    window.addEventListener('scroll', scrollDisappear);
+    
 }
 
 function loadPageTwo() {
@@ -153,10 +190,12 @@ function setRules(btn) {
         row.setAttribute("id", "school-item-" + n);
         let data = document.createElement("td");
         data.innerHTML = group.displayName;
+        data.classList.add('pretty-school-name');
         for (let i = 0; i < group.rules.length; i++) {
             let p = document.createElement("li");
             p.setAttribute("id", "p-rule-" + n + "-" + i);
             p.innerHTML = group.rules[i].displayName;
+            p.classList.add('pretty-p');
             //p.classList.add("invalid");
             data.append(p);
         }
@@ -206,3 +245,4 @@ function getCurrentRules(rules, id) {
     }
     return parseGroup(current_rules);
 }
+
